@@ -24,6 +24,12 @@ If you want to add awesome feature on this plugin. You are most welcome. Click  
   1. Install the plugin either via the WordPress.org plugin directory, or by uploading the files to your server (in the /wp-content/plugins/ directory).
   2. Activate the Instagram Pack plugin through the 'Plugins' menu in WordPress.
 
+
+== Screenshots ==
+1. Admin Settings
+2. Instagram Gallery - Frontend
+
+
 == Changelog ==
 
   = 1.0.0 - 2019/06/07 =
