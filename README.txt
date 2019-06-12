@@ -18,7 +18,7 @@ You can display as many different Instagram feeds as you like, on either the sam
 
 Get [free support](https://mantrabrain.com/support-forum/)
 
-If you want to add awesome feature on this plugin. You are most welcome. Click  [here](https://github.com/mantrabrain/yatra/) to contribute.
+If you want to add awesome feature on this plugin. You are most welcome. Click  [here](https://github.com/mantrabrain/mantrabrain-instagram-pack/) to contribute.
 
 == Installation ==
   1. Install the plugin either via the WordPress.org plugin directory, or by uploading the files to your server (in the /wp-content/plugins/ directory).
