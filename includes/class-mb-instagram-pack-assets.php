@@ -12,7 +12,7 @@ if (!class_exists('MB_Instagram_Pack_Assets')) {
         {
 
             // Other Register and Enqueue
-            wp_register_style('mb-instagram-pack-font-awesome', MB_INSTAGRAM_PACK_PLUGIN_URI . '/assets/lib/font-awesome/css/font-awesome.css', false, MB_INSTAGRAM_PACK_VERSION);
+            wp_register_style('mb-instagram-pack-font-awesome', MB_INSTAGRAM_PACK_PLUGIN_URI . '/assets/lib/font-awesome/css/font-awesome.css', false, '4.7.0');
             wp_enqueue_style('mb-instagram-pack-font-awesome');
 
             // Other Register and Enqueue
