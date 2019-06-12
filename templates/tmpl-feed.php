@@ -75,7 +75,7 @@ defined('ABSPATH') || exit;
     <main>
 
         <div class="ip-container">
-            <?php $grid_number = mb_instagram_pack_get_option('mb_instagram_pack_feed_grid', 3); ?>
+            <?php $grid_number = mb_instagram_pack_get_option('instagram_pack_feed_grid', 3); ?>
 
             <div class="ip-gallery <?php echo 'gallery-grid-' . absint($grid_number) ?>">
 

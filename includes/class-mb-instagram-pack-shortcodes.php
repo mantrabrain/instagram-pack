@@ -22,7 +22,7 @@ class MB_Instagram_Pack_Shortcodes
 
         $shortcodes = array(
 
-            'mb_instagram_pack_feed' => __CLASS__ . '::feed',
+            'instagram_pack_feed' => __CLASS__ . '::feed',
         );
 
         foreach ($shortcodes as $shortcode => $function) {

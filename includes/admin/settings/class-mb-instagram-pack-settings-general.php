@@ -139,7 +139,7 @@ class MB_Instagram_Pack_Settings_General extends MB_Instagram_Pack_Admin_Setting
                     ),
                     array(
                         'title' => '',
-                        'desc' => __('Click here to get instagram token from here and paste it to Access Token Box and save it and add this [mb_instagram_pack_feed] shortcode into your page,posts or widgets.', 'mb-instagram-pack'),
+                        'desc' => __('Click here to get instagram token from here and paste it to Access Token Box and save it and add this [instagram_pack_feed] shortcode into your page,posts or widgets.', 'mb-instagram-pack'),
                         'id' => 'mb_instagram_pack_currency',
                         'default' => __('Click here to get instagram access token', 'mb-instagram-pack'),
                         'type' => 'link',
@@ -155,7 +155,7 @@ class MB_Instagram_Pack_Settings_General extends MB_Instagram_Pack_Admin_Setting
                     array(
                         'title' => __('Instagram Gallery Grid', 'mb-instagram-pack'),
                         'desc' => __('Select grid for instagram feed', 'mb-instagram-pack'),
-                        'id' => 'mb_instagram_pack_feed_grid',
+                        'id' => 'instagram_pack_feed_grid',
                         'default' => 3,
                         'type' => 'select',
                         'options' => array(

@@ -1,5 +1,5 @@
 <?php
-$grid_number = mb_instagram_pack_get_option('mb_instagram_pack_feed_grid', 3);
+$grid_number = mb_instagram_pack_get_option('instagram_pack_feed_grid', 3);
 ?>
 <div class="ip-gallery-item <?php echo 'grid-' . absint($grid_number) ?>"
      data-post-id="<?php echo esc_attr($data['id']) ?>">

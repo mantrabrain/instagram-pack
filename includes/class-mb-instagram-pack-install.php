@@ -34,7 +34,7 @@ final class MB_Instagram_Pack_Install
         $pages = array(
 
             array(
-                'post_content' => '[mb_instagram_pack_feed]',
+                'post_content' => '[instagram_pack_feed]',
                 'post_title' => 'Instagram Pack Feed Page',
                 'post_status' => 'publish',
                 'post_type' => 'page',
