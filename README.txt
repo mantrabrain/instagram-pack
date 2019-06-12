@@ -1,4 +1,4 @@
-=== Instagram Pack - Show your Instagram feed, gallery and photoes ===
+=== Mantrabrain Instagram Pack - Show your Instagram feed, gallery and photoes ===
 Contributors: mantrabrain
 Tags: Instagram, Instagram feed, Instagram photos, Instagram gallery
 Requires at least: 3.0
