@@ -2,16 +2,16 @@
 /**
  * Shortcodes
  *
- * @package Instagram_Pack/Classes
+ * @package MB_Instagram_Pack/Classes
  * @version 1.0.0
  */
 
 defined('ABSPATH') || exit;
 
 /**
- * Instagram_Pack Shortcodes class.
+ * MB_Instagram_Pack Shortcodes class.
  */
-class Instagram_Pack_Shortcodes
+class MB_Instagram_Pack_Shortcodes
 {
 
     /**
@@ -22,7 +22,7 @@ class Instagram_Pack_Shortcodes
 
         $shortcodes = array(
 
-            'instagram_pack_feed' => __CLASS__ . '::feed',
+            'mb_instagram_pack_feed' => __CLASS__ . '::feed',
         );
 
         foreach ($shortcodes as $shortcode => $function) {
@@ -45,7 +45,7 @@ class Instagram_Pack_Shortcodes
         $function,
         $atts = array(),
         $wrapper = array(
-            'class' => 'instagram-pack',
+            'class' => 'mb-instagram-pack',
             'before' => null,
             'after' => null,
         )
@@ -70,7 +70,7 @@ class Instagram_Pack_Shortcodes
      */
     public static function feed($atts)
     {
-        return self::shortcode_wrapper(array('Instagram_Pack_Shortcode_Feed', 'output'), $atts);
+        return self::shortcode_wrapper(array('MB_Instagram_Pack_Shortcode_Feed', 'output'), $atts);
     }
 
 }

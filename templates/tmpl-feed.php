@@ -5,7 +5,7 @@ defined('ABSPATH') || exit;
  */
 ?>
 
-<div class="instagram-pack-profile-feed">
+<div class="mb-instagram-pack-profile-feed">
     <header>
         <div class="ip-container">
 
@@ -75,7 +75,7 @@ defined('ABSPATH') || exit;
     <main>
 
         <div class="ip-container">
-            <?php $grid_number = instagram_pack_get_option('instagram_pack_feed_grid', 3); ?>
+            <?php $grid_number = mb_instagram_pack_get_option('mb_instagram_pack_feed_grid', 3); ?>
 
             <div class="ip-gallery <?php echo 'gallery-grid-' . absint($grid_number) ?>">
 
@@ -94,9 +94,9 @@ defined('ABSPATH') || exit;
             <!-- End of gallery -->
 
             <?php
-            $load_more_text = instagram_pack_get_option('load_more_text', __('Load more..', 'instagram-pack'));
-            $loading_text = instagram_pack_get_option('load_more_loading_text', __('Loading..', 'instagram-pack'));
-            $follow_text = instagram_pack_get_option('follow_text', __('Follow', 'instagram-pack'));
+            $load_more_text = mb_instagram_pack_get_option('load_more_text', __('Load more..', 'mb-instagram-pack'));
+            $loading_text = mb_instagram_pack_get_option('load_more_loading_text', __('Loading..', 'mb-instagram-pack'));
+            $follow_text = mb_instagram_pack_get_option('follow_text', __('Follow', 'mb-instagram-pack'));
             ?>
             <div class="footer-btn">
                 <a class="load-more" data-loading-text="<?php echo esc_attr($loading_text); ?>"

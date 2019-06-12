@@ -1,8 +1,8 @@
 <?php
 /**
- * Instagram_Pack Autoloader.
+ * MB_Instagram_Pack Autoloader.
  *
- * @package Instagram_Pack/Classes
+ * @package MB_Instagram_Pack/Classes
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 /**
  * Autoloader class.
  */
-class Instagram_Pack_Autoloader
+class MB_Instagram_Pack_Autoloader
 {
 
     /**
@@ -32,7 +32,7 @@ class Instagram_Pack_Autoloader
 
         spl_autoload_register(array($this, 'autoload'));
 
-        $this->include_path = untrailingslashit(plugin_dir_path(INSTAGRAM_PACK_FILE)) . '/includes/';
+        $this->include_path = untrailingslashit(plugin_dir_path(MB_INSTAGRAM_PACK_FILE)) . '/includes/';
     }
 
     /**
@@ -62,7 +62,7 @@ class Instagram_Pack_Autoloader
     }
 
     /**
-     * Auto-load Instagram_Pack classes on demand to reduce memory consumption.
+     * Auto-load MB_Instagram_Pack classes on demand to reduce memory consumption.
      *
      * @param string $class Class name.
      */
@@ -72,7 +72,7 @@ class Instagram_Pack_Autoloader
         $class = strtolower($class);
 
 
-        if (0 !== strpos($class, 'instagram_pack_')) {
+        if (0 !== strpos($class, 'mb_instagram_pack_')) {
             return;
         }
 
@@ -80,19 +80,19 @@ class Instagram_Pack_Autoloader
 
         $path = '';
 
-        if (0 === strpos($class, 'instagram_pack_shortcode')) {
+        if (0 === strpos($class, 'mb_instagram_pack_shortcode')) {
             $path = $this->include_path . 'shortcodes/';
-        } elseif (0 === strpos($class, 'instagram_pack_metabox')) {
+        } elseif (0 === strpos($class, 'mb_instagram_pack_metabox')) {
             $path = $this->include_path . 'meta-boxes/';
-        } elseif (0 === strpos($class, 'instagram_pack_taxonomy')) {
+        } elseif (0 === strpos($class, 'mb_instagram_pack_taxonomy')) {
             $path = $this->include_path . 'taxonomy/';
-        } elseif (0 === strpos($class, 'instagram_pack_custom_post_type')) {
+        } elseif (0 === strpos($class, 'mb_instagram_pack_custom_post_type')) {
             $path = $this->include_path . 'custom-post-type/';
-        } elseif (0 === strpos($class, 'instagram_pack_admin')) {
+        } elseif (0 === strpos($class, 'mb_instagram_pack_admin')) {
             $path = $this->include_path . 'admin/';
-        } elseif (0 === strpos($class, 'instagram_pack_customizer_control')) {
+        } elseif (0 === strpos($class, 'mb_instagram_pack_customizer_control')) {
             $path = $this->include_path . 'customizer/control/';
-        } elseif (0 === strpos($class, 'instagram_pack_helper')) {
+        } elseif (0 === strpos($class, 'mb_instagram_pack_helper')) {
             $path = $this->include_path . 'helper/';
         }
 
@@ -102,4 +102,4 @@ class Instagram_Pack_Autoloader
     }
 }
 
-new Instagram_Pack_Autoloader();
+new MB_Instagram_Pack_Autoloader();

@@ -21,7 +21,7 @@
  *
  * 
  * @since      1.0.0
- * * @package    Instagram_Pack
+ * * @package    MB_Instagram_Pack
  */
 
 // If uninstall not called from WordPress, then exit.

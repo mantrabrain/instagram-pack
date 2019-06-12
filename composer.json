@@ -1,7 +1,7 @@
 {
-  "name": "mantrabrain/instagram-pack",
+  "name": "mantrabrain/mb-instagram-pack",
   "description": "WordPress eCommerce Theme",
-  "homepage": "https://mantrabrain.com/downloads/instagram-pack-wordpress-woocommerce-theme/",
+  "homepage": "https://mantrabrain.com/downloads/mb-instagram-pack-wordpress-woocommerce-theme/",
   "type": "wordpress-theme",
   "license": "GPL-3.0+",
   "require": {

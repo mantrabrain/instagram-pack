@@ -4,7 +4,7 @@
  *
  * Used on the checkout page, the checkout shortcode displays the checkout process.
  *
- * @package Instagram_Pack/Shortcodes/Feed
+ * @package MB_Instagram_Pack/Shortcodes/Feed
  * @version 1.0.0
  */
 
@@ -13,7 +13,7 @@ defined('ABSPATH') || exit;
 /**
  * Shortcode checkout class.
  */
-class Instagram_Pack_Shortcode_Feed
+class MB_Instagram_Pack_Shortcode_Feed
 {
 
     /**
@@ -24,7 +24,7 @@ class Instagram_Pack_Shortcode_Feed
      */
     public static function get($atts)
     {
-        return Instagram_Pack_Shortcodes::shortcode_wrapper(array(__CLASS__, 'output'), $atts);
+        return MB_Instagram_Pack_Shortcodes::shortcode_wrapper(array(__CLASS__, 'output'), $atts);
     }
 
     /**
@@ -46,30 +46,30 @@ class Instagram_Pack_Shortcode_Feed
     private static function show_feed()
     {
 
-        do_action('instagram_pack_before_feed_template');
+        do_action('mb_instagram_pack_before_feed_template');
 
-        $user_data = instagram_pack_get_option('user_data', '');
+        $user_data = mb_instagram_pack_get_option('user_data', '');
 
-        $is_valid_token = (boolean)instagram_pack_get_option('is_valid_token', false);
+        $is_valid_token = (boolean)mb_instagram_pack_get_option('is_valid_token', false);
 
         if ($is_valid_token) {
 
             $id = $user_data['id'];
 
-            $per_page_posts = instagram_pack_get_option('per_page_posts', 10);
+            $per_page_posts = mb_instagram_pack_get_option('per_page_posts', 10);
 
-            $feed_data = Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts);
+            $feed_data = MB_Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts);
 
-            instagram_pack_get_template('tmpl-feed.php', array(
+            mb_instagram_pack_get_template('tmpl-feed.php', array(
                     'feed_data' => $feed_data,
                     'user_data' => $user_data
                 )
             );
 
         } else {
-            echo '<p style="font-size: 17px;font-style: italic;padding: 10px;background: wheat;color: #000;text-align: center;">' . __(' Instagram access token invalid, please contact your website administrator', 'instagram-pack') . '</p>';
+            echo '<p style="font-size: 17px;font-style: italic;padding: 10px;background: wheat;color: #000;text-align: center;">' . __(' Instagram access token invalid, please contact your website administrator', 'mb-instagram-pack') . '</p>';
         }
-        do_action('instagram_pack_after_feed_template');
+        do_action('mb_instagram_pack_after_feed_template');
 
 
     }

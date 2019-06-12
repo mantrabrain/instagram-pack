@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 
-class Instagram_Pack_Ajax
+class MB_Instagram_Pack_Ajax
 {
 
     private function admin_ajax_actions()
@@ -27,11 +27,11 @@ class Instagram_Pack_Ajax
 
         if (@isset($debug_backtrace[1]['function'])) {
 
-            $nonce_action = 'wp_instagram_pack_' . $debug_backtrace[1]['function'] . '_nonce';
+            $nonce_action = 'wp_mb_instagram_pack_' . $debug_backtrace[1]['function'] . '_nonce';
 
         }
         if (empty($nonce_value)) {
-            $nonce_value = isset($_REQUEST['instagram_pack_nonce']) ? $_REQUEST['instagram_pack_nonce'] : '';
+            $nonce_value = isset($_REQUEST['mb_instagram_pack_nonce']) ? $_REQUEST['mb_instagram_pack_nonce'] : '';
         }
 
         return wp_verify_nonce($nonce_value, $nonce_action);
@@ -40,7 +40,7 @@ class Instagram_Pack_Ajax
 
     private function ajax_error()
     {
-        return array('message' => __('Something wrong, please try again.', 'instagram-pack'), 'status' => false);
+        return array('message' => __('Something wrong, please try again.', 'mb-instagram-pack'), 'status' => false);
     }
 
     public function __construct()
@@ -52,9 +52,9 @@ class Instagram_Pack_Ajax
         $all_ajax_actions = array_unique(array_merge($admin_actions, $public_ajax_actions));
 
         foreach ($all_ajax_actions as $action) {
-            add_action('wp_ajax_instagram_pack_' . $action, array($this, $action));
+            add_action('wp_ajax_mb_instagram_pack_' . $action, array($this, $action));
             if (isset($public_ajax_actions[$action])) {
-                add_action('wp_ajax_nopriv_instagram_pack_' . $action, array($this, $action));
+                add_action('wp_ajax_nopriv_mb_instagram_pack_' . $action, array($this, $action));
             }
 
         }
@@ -76,17 +76,17 @@ class Instagram_Pack_Ajax
 
             wp_send_json_error();
         }
-        $user_data = instagram_pack_get_option('user_data', '');
+        $user_data = mb_instagram_pack_get_option('user_data', '');
 
         $id = $user_data['id'];
 
-        $per_page_posts = instagram_pack_get_option('per_page_posts', 10);
+        $per_page_posts = mb_instagram_pack_get_option('per_page_posts', 10);
 
-        $feed_data = Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts, $last_post_id);
+        $feed_data = MB_Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts, $last_post_id);
 
         foreach ($feed_data as $data) {
 
-            instagram_pack_get_template('tmpl-feed-item.php', array(
+            mb_instagram_pack_get_template('tmpl-feed-item.php', array(
                     'data' => $data,
                     'user_data' => $user_data
                 )
@@ -98,4 +98,4 @@ class Instagram_Pack_Ajax
 
 }
 
-new Instagram_Pack_Ajax();
+new MB_Instagram_Pack_Ajax();

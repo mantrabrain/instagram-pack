@@ -7,11 +7,11 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Display your instagram feed using this [instagram_pack_feed] shortcode.
+Display your instagram feed using this [mb_instagram_pack_feed] shortcode.
 
 == Description ==
 
-Display your instagram feed using this [instagram_pack_feed] shortcode.
+Display your instagram feed using this [mb_instagram_pack_feed] shortcode.
 
 You can display as many different Instagram feeds as you like, on either the same page or on different pages, by just using the shortcode options below. For example:
 `[instagram-feed]`

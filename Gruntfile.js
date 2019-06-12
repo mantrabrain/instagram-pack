@@ -142,7 +142,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    potFilename: 'instagram-pack.pot',
+                    potFilename: 'mb-instagram-pack.pot',
                     exclude: [
                         'vendor/.*'
                     ]
@@ -153,7 +153,7 @@ module.exports = function (grunt) {
         // Check textdomain errors.
         checktextdomain: {
             options: {
-                text_domain: 'instagram-pack',
+                text_domain: 'mb-instagram-pack',
                 keywords: [
                     '__:1,2d',
                     '_e:1,2d',
@@ -223,7 +223,7 @@ module.exports = function (grunt) {
         // Compress files and folders.
         compress: {
             options: {
-                archive: 'instagram-pack.zip'
+                archive: 'mb-instagram-pack.zip'
             },
             files: {
                 src: [
@@ -245,7 +245,7 @@ module.exports = function (grunt) {
                     '!.gitignore'
 
                 ],
-                dest: 'instagram-pack',
+                dest: 'mb-instagram-pack',
                 expand: true
             }
         }

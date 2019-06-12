@@ -1,38 +1,38 @@
 <?php
 /**
- * Instagram_Pack frontend setup
+ * MB_Instagram_Pack frontend setup
  *
- * @package Instagram_Pack
+ * @package MB_Instagram_Pack
  * @since   1.0.0
  */
 
 defined('ABSPATH') || exit;
 
 /**
- * Main Instagram_Pack_Frontend Class.
+ * Main MB_Instagram_Pack_Frontend Class.
  *
- * @class Instagram_Pack
+ * @class MB_Instagram_Pack
  */
-final class Instagram_Pack_Frontend
+final class MB_Instagram_Pack_Frontend
 {
 
     /**
      * The single instance of the class.
      *
-     * @var Instagram_Pack_Frontend
+     * @var MB_Instagram_Pack_Frontend
      * @since 1.0.0
      */
     protected static $_instance = null;
 
 
     /**
-     * Main Instagram_Pack_Frontend Instance.
+     * Main MB_Instagram_Pack_Frontend Instance.
      *
-     * Ensures only one instance of Instagram_Pack_Frontend is loaded or can be loaded.
+     * Ensures only one instance of MB_Instagram_Pack_Frontend is loaded or can be loaded.
      *
      * @since 1.0.0
      * @static
-     * @return Instagram_Pack_Frontend - Main instance.
+     * @return MB_Instagram_Pack_Frontend - Main instance.
      */
     public static function instance()
     {
@@ -43,13 +43,13 @@ final class Instagram_Pack_Frontend
     }
 
     /**
-     * Instagram_Pack Constructor.
+     * MB_Instagram_Pack Constructor.
      */
     public function __construct()
     {
         $this->includes();
         $this->init_hooks();
-        do_action('instagram_pack_frontend_loaded');
+        do_action('mb_instagram_pack_frontend_loaded');
     }
 
     /**
@@ -69,7 +69,7 @@ final class Instagram_Pack_Frontend
      */
     public function includes()
     {
-        include_once INSTAGRAM_PACK_ABSPATH . 'includes/class-instagram-pack-assets.php';
+        include_once MB_INSTAGRAM_PACK_ABSPATH . 'includes/class-mb-instagram-pack-assets.php';
 
 
     }

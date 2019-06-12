@@ -1,8 +1,8 @@
 <?php
 /**
- * Instagram_Pack Miscellaneous Settings
+ * MB_Instagram_Pack Miscellaneous Settings
  *
- * @package Instagram_Pack/Admin
+ * @package MB_Instagram_Pack/Admin
  * @version 1.0.0
  */
 
@@ -10,14 +10,14 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-if (class_exists('Instagram_Pack_Settings_Miscellaneous', false)) {
-    return new Instagram_Pack_Settings_Miscellaneous();
+if (class_exists('MB_Instagram_Pack_Settings_Miscellaneous', false)) {
+    return new MB_Instagram_Pack_Settings_Miscellaneous();
 }
 
 /**
- * Instagram_Pack_Settings_Miscellaneous.
+ * MB_Instagram_Pack_Settings_Miscellaneous.
  */
-class Instagram_Pack_Settings_Miscellaneous extends Instagram_Pack_Admin_Settings_Base
+class MB_Instagram_Pack_Settings_Miscellaneous extends MB_Instagram_Pack_Admin_Settings_Base
 {
 
     /**
@@ -26,7 +26,7 @@ class Instagram_Pack_Settings_Miscellaneous extends Instagram_Pack_Admin_Setting
     public function __construct()
     {
         $this->id = 'miscellaneous';
-        $this->label = __('Miscellaneous', 'instagram-pack');
+        $this->label = __('Miscellaneous', 'mb-instagram-pack');
 
         parent::__construct();
     }
@@ -41,7 +41,7 @@ class Instagram_Pack_Settings_Miscellaneous extends Instagram_Pack_Admin_Setting
 
         $settings = $this->get_settings($current_section);
 
-        Instagram_Pack_Admin_Settings::output_fields($settings);
+        MB_Instagram_Pack_Admin_Settings::output_fields($settings);
     }
 
     /**
@@ -52,10 +52,10 @@ class Instagram_Pack_Settings_Miscellaneous extends Instagram_Pack_Admin_Setting
         global $current_section;
 
         $settings = $this->get_settings($current_section);
-        Instagram_Pack_Admin_Settings::save_fields($settings);
+        MB_Instagram_Pack_Admin_Settings::save_fields($settings);
 
         if ($current_section) {
-            do_action('instagram_pack_update_options_' . $this->id . '_' . $current_section);
+            do_action('mb_instagram_pack_update_options_' . $this->id . '_' . $current_section);
         }
     }
 
@@ -69,10 +69,10 @@ class Instagram_Pack_Settings_Miscellaneous extends Instagram_Pack_Admin_Setting
     {
 
         $settings = apply_filters(
-            'instagram_pack_miscellaneous_settings',
+            'mb_instagram_pack_miscellaneous_settings',
             array(
                 array(
-                    'title' => __('Miscellaneous', 'instagram-pack'),
+                    'title' => __('Miscellaneous', 'mb-instagram-pack'),
                     'type' => 'title',
                     'desc' => '',
                     'id' => 'miscellaneous_options',
@@ -86,8 +86,8 @@ class Instagram_Pack_Settings_Miscellaneous extends Instagram_Pack_Admin_Setting
         );
 
 
-        return apply_filters('instagram_pack_get_settings_' . $this->id, $settings, $current_section);
+        return apply_filters('mb_instagram_pack_get_settings_' . $this->id, $settings, $current_section);
     }
 }
 
-return new Instagram_Pack_Settings_Miscellaneous();
+return new MB_Instagram_Pack_Settings_Miscellaneous();

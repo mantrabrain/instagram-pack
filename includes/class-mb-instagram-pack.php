@@ -1,46 +1,46 @@
 <?php
 /**
- * Instagram_Pack setup
+ * MB_Instagram_Pack setup
  *
- * @package Instagram_Pack
+ * @package MB_Instagram_Pack
  * @since   1.0.0
  */
 
 defined('ABSPATH') || exit;
 
 /**
- * Main Instagram_Pack Class.
+ * Main MB_Instagram_Pack Class.
  *
- * @class Instagram_Pack
+ * @class MB_Instagram_Pack
  */
-final class Instagram_Pack
+final class MB_Instagram_Pack
 {
 
     /**
-     * Instagram_Pack version.
+     * MB_Instagram_Pack version.
      *
      * @var string
      */
-    public $version = INSTAGRAM_PACK_VERSION;
+    public $version = MB_INSTAGRAM_PACK_VERSION;
 
     /**
      * The single instance of the class.
      *
-     * @var Instagram_Pack
+     * @var MB_Instagram_Pack
      * @since 1.0.0
      */
     protected static $_instance = null;
 
 
     /**
-     * Main Instagram_Pack Instance.
+     * Main MB_Instagram_Pack Instance.
      *
-     * Ensures only one instance of Instagram_Pack is loaded or can be loaded.
+     * Ensures only one instance of MB_Instagram_Pack is loaded or can be loaded.
      *
      * @since 1.0.0
      * @static
      * @see mb_aec_addons()
-     * @return Instagram_Pack - Main instance.
+     * @return MB_Instagram_Pack - Main instance.
      */
     public static function instance()
     {
@@ -57,7 +57,7 @@ final class Instagram_Pack
      */
     public function __clone()
     {
-        _doing_it_wrong(__FUNCTION__, __('Cloning is forbidden.', 'instagram-pack'), '1.0.0');
+        _doing_it_wrong(__FUNCTION__, __('Cloning is forbidden.', 'mb-instagram-pack'), '1.0.0');
     }
 
     /**
@@ -67,7 +67,7 @@ final class Instagram_Pack
      */
     public function __wakeup()
     {
-        _doing_it_wrong(__FUNCTION__, __('Unserializing instances of this class is forbidden.', 'instagram-pack'), '1.0.0');
+        _doing_it_wrong(__FUNCTION__, __('Unserializing instances of this class is forbidden.', 'mb-instagram-pack'), '1.0.0');
     }
 
     /**
@@ -84,14 +84,14 @@ final class Instagram_Pack
     }
 
     /**
-     * Instagram_Pack Constructor.
+     * MB_Instagram_Pack Constructor.
      */
     public function __construct()
     {
         $this->define_constants();
         $this->includes();
         $this->init_hooks();
-        do_action('instagram_pack_loaded');
+        do_action('mb_instagram_pack_loaded');
     }
 
     /**
@@ -102,23 +102,23 @@ final class Instagram_Pack
     private function init_hooks()
     {
 
-        register_activation_hook(INSTAGRAM_PACK_FILE, array('Instagram_Pack_Install', 'install'));
+        register_activation_hook(MB_INSTAGRAM_PACK_FILE, array('MB_Instagram_Pack_Install', 'install'));
 
         add_action('init', array($this, 'init'), 0);
         add_action('init', array($this, 'global_option'), 0);
-        add_action('init', array('Instagram_Pack_Shortcodes', 'init'));
+        add_action('init', array('MB_Instagram_Pack_Shortcodes', 'init'));
 
 
     }
 
     /**
-     * Define Instagram_Pack Constants.
+     * Define MB_Instagram_Pack Constants.
      */
     private function define_constants()
     {
 
-        $this->define('INSTAGRAM_PACK_ABSPATH', dirname(INSTAGRAM_PACK_FILE) . '/');
-        $this->define('INSTAGRAM_PACK_BASENAME', plugin_basename(INSTAGRAM_PACK_FILE));
+        $this->define('MB_INSTAGRAM_PACK_ABSPATH', dirname(MB_INSTAGRAM_PACK_FILE) . '/');
+        $this->define('MB_INSTAGRAM_PACK_BASENAME', plugin_basename(MB_INSTAGRAM_PACK_FILE));
     }
 
     /**
@@ -163,36 +163,36 @@ final class Instagram_Pack
         /**
          * Class autoloader.
          */
-        include_once INSTAGRAM_PACK_ABSPATH . 'includes/class-instagram-pack-autoloader.php';
-        include_once INSTAGRAM_PACK_ABSPATH . 'includes/functions.php';
-        include_once INSTAGRAM_PACK_ABSPATH . 'includes/class-instagram-pack-shortcodes.php';
-        include_once INSTAGRAM_PACK_ABSPATH . 'includes/class-instagram-pack-ajax.php';
+        include_once MB_INSTAGRAM_PACK_ABSPATH . 'includes/class-mb-instagram-pack-autoloader.php';
+        include_once MB_INSTAGRAM_PACK_ABSPATH . 'includes/functions.php';
+        include_once MB_INSTAGRAM_PACK_ABSPATH . 'includes/class-mb-instagram-pack-shortcodes.php';
+        include_once MB_INSTAGRAM_PACK_ABSPATH . 'includes/class-mb-instagram-pack-ajax.php';
 
 
         if ($this->is_request('admin')) {
-            Instagram_Pack_Admin::instance();
+            MB_Instagram_Pack_Admin::instance();
         }
 
         if ($this->is_request('frontend')) {
-            Instagram_Pack_Frontend::instance();
+            MB_Instagram_Pack_Frontend::instance();
         }
 
     }
 
     public function global_option()
     {
-        global $instagram_pack_global_options;
+        global $mb_instagram_pack_global_options;
 
-        $instagram_pack_global_options = instagram_pack_get_option('instagram_pack_options', array(), true);
+        $mb_instagram_pack_global_options = mb_instagram_pack_get_option('mb_instagram_pack_options', array(), true);
     }
 
     /**
-     * Init Instagram_Pack when WordPress Initialises.
+     * Init MB_Instagram_Pack when WordPress Initialises.
      */
     public function init()
     {
         // Before init action.
-        do_action('before_instagram_pack_init');
+        do_action('before_mb_instagram_pack_init');
 
 
         // Set up localisation.
@@ -200,7 +200,7 @@ final class Instagram_Pack
 
 
         // Init action.
-        do_action('instagram_pack_init');
+        do_action('mb_instagram_pack_init');
     }
 
     /**
@@ -209,16 +209,16 @@ final class Instagram_Pack
      * Note: the first-loaded translation file overrides any following ones if the same translation is present.
      *
      * Locales found in:
-     *      - WP_LANG_DIR/instagram-pack/instagram-pack-LOCALE.mo
-     *      - WP_LANG_DIR/plugins/instagram-pack-LOCALE.mo
+     *      - WP_LANG_DIR/mb-instagram-pack/mb-instagram-pack-LOCALE.mo
+     *      - WP_LANG_DIR/plugins/mb-instagram-pack-LOCALE.mo
      */
     public function load_plugin_textdomain()
     {
         $locale = is_admin() && function_exists('get_user_locale') ? get_user_locale() : get_locale();
-        $locale = apply_filters('plugin_locale', $locale, 'instagram-pack');
-        unload_textdomain('instagram-pack');
-        load_textdomain('instagram-pack', WP_LANG_DIR . '/instagram-pack/instagram-pack-' . $locale . '.mo');
-        load_plugin_textdomain('instagram-pack', false, plugin_basename(dirname(INSTAGRAM_PACK_FILE)) . '/i18n/languages');
+        $locale = apply_filters('plugin_locale', $locale, 'mb-instagram-pack');
+        unload_textdomain('mb-instagram-pack');
+        load_textdomain('mb-instagram-pack', WP_LANG_DIR . '/mb-instagram-pack/mb-instagram-pack-' . $locale . '.mo');
+        load_plugin_textdomain('mb-instagram-pack', false, plugin_basename(dirname(MB_INSTAGRAM_PACK_FILE)) . '/i18n/languages');
     }
 
     /**
@@ -227,7 +227,7 @@ final class Instagram_Pack
     public function setup_environment()
     {
 
-        $this->define('INSTAGRAM_PACK_TEMPLATE_PATH', $this->template_path());
+        $this->define('MB_INSTAGRAM_PACK_TEMPLATE_PATH', $this->template_path());
 
     }
 
@@ -238,7 +238,7 @@ final class Instagram_Pack
      */
     public function plugin_url()
     {
-        return untrailingslashit(plugins_url('/', INSTAGRAM_PACK_FILE));
+        return untrailingslashit(plugins_url('/', MB_INSTAGRAM_PACK_FILE));
     }
 
     /**
@@ -248,7 +248,7 @@ final class Instagram_Pack
      */
     public function plugin_path()
     {
-        return untrailingslashit(plugin_dir_path(INSTAGRAM_PACK_FILE));
+        return untrailingslashit(plugin_dir_path(MB_INSTAGRAM_PACK_FILE));
     }
 
     /**
@@ -258,7 +258,7 @@ final class Instagram_Pack
      */
     public function template_path()
     {
-        return apply_filters('instagram_pack_template_path', 'instagram-pack/');
+        return apply_filters('mb_instagram_pack_template_path', 'mb-instagram-pack/');
     }
 
     /**
@@ -268,7 +268,7 @@ final class Instagram_Pack
      */
     public function plugin_template_path()
     {
-        return apply_filters('instagram_pack_plugin_template_path', $this->plugin_path() . '/templates/');
+        return apply_filters('mb_instagram_pack_plugin_template_path', $this->plugin_path() . '/templates/');
     }
 
     /**

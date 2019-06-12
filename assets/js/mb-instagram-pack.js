@@ -1,4 +1,4 @@
-// @var instagram_pack_params
+// @var mb_instagram_pack_params
 var InstagramPackFrontend = function ($) {
     return {
 
@@ -7,7 +7,7 @@ var InstagramPackFrontend = function ($) {
             this.bindEvents();
         },
         cacheDom: function () {
-            this.$load_more_btn = $('.instagram-pack-profile-feed .load-more');
+            this.$load_more_btn = $('.mb-instagram-pack-profile-feed .load-more');
         },
 
         bindEvents: function () {
@@ -41,15 +41,15 @@ var InstagramPackFrontend = function ($) {
         },
         loadMore: function (last_post_id, $load_more) {
             var $this = this;
-            var load_more_profile_params = instagram_pack_params.load_more_profile_params;
+            var load_more_profile_params = mb_instagram_pack_params.load_more_profile_params;
             var load_more_profile_data = {
                 action: load_more_profile_params.load_more_profile_action,
-                instagram_pack_nonce: load_more_profile_params.load_more_profile_nonce,
+                mb_instagram_pack_nonce: load_more_profile_params.load_more_profile_nonce,
                 last_post_id: last_post_id
             };
             $.ajax({
                 type: "POST",
-                url: instagram_pack_params.ajax_url,
+                url: mb_instagram_pack_params.ajax_url,
                 data: load_more_profile_data,
                 beforeSend: function () {
                     $this.addLoading($load_more);
@@ -58,7 +58,7 @@ var InstagramPackFrontend = function ($) {
 
                     $load_more.closest('.ip-container').find('.ip-gallery').append(data);
 
-                    var total_data_count = $load_more.closest('.instagram-pack-profile-feed').find('.total-posts-count').attr('data-post-count');
+                    var total_data_count = $load_more.closest('.mb-instagram-pack-profile-feed').find('.total-posts-count').attr('data-post-count');
 
                     var total_loaded_data = $load_more.closest('.ip-container').find('.ip-gallery .ip-gallery-item').length;
 

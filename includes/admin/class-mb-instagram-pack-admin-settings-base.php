@@ -1,10 +1,10 @@
 <?php
 /**
- * Instagram_Pack Settings Page/Tab
+ * MB_Instagram_Pack Settings Page/Tab
  *
  * @author      Mantrabrain
  * @category    Admin
- * @package     Instagram_Pack/Admin
+ * @package     MB_Instagram_Pack/Admin
  * @version     1.0.0
  */
 
@@ -12,12 +12,12 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
+if (!class_exists('MB_Instagram_Pack_Admin_Settings_Base', false)) :
 
     /**
-     * Instagram_Pack_Admin_Settings_Base.
+     * MB_Instagram_Pack_Admin_Settings_Base.
      */
-    abstract class Instagram_Pack_Admin_Settings_Base
+    abstract class MB_Instagram_Pack_Admin_Settings_Base
     {
 
         /**
@@ -39,10 +39,10 @@ if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
          */
         public function __construct()
         {
-            add_filter('instagram_pack_settings_tabs_array', array($this, 'add_settings_page'), 20);
-            add_action('instagram_pack_sections_' . $this->id, array($this, 'output_sections'));
-            add_action('instagram_pack_settings_' . $this->id, array($this, 'output'));
-            add_action('instagram_pack_settings_save_' . $this->id, array($this, 'save'));
+            add_filter('mb_instagram_pack_settings_tabs_array', array($this, 'add_settings_page'), 20);
+            add_action('mb_instagram_pack_sections_' . $this->id, array($this, 'output_sections'));
+            add_action('mb_instagram_pack_settings_' . $this->id, array($this, 'output'));
+            add_action('mb_instagram_pack_settings_save_' . $this->id, array($this, 'save'));
         }
 
         /**
@@ -88,7 +88,7 @@ if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
          */
         public function get_settings()
         {
-            return apply_filters('instagram_pack_get_settings_' . $this->id, array());
+            return apply_filters('mb_instagram_pack_get_settings_' . $this->id, array());
         }
 
         /**
@@ -98,7 +98,7 @@ if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
          */
         public function get_sections()
         {
-            return apply_filters('instagram_pack_get_sections_' . $this->id, array());
+            return apply_filters('mb_instagram_pack_get_sections_' . $this->id, array());
         }
 
         /**
@@ -119,7 +119,7 @@ if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
             $array_keys = array_keys($sections);
 
             foreach ($sections as $id => $label) {
-                echo '<li><a href="' . admin_url('admin.php?page=instagram-pack&tab=' . $this->id . '&section=' . sanitize_title($id)) . '" class="' . ($current_section == $id ? 'current' : '') . '">' . $label . '</a> ' . (end($array_keys) == $id ? '' : '|') . ' </li>';
+                echo '<li><a href="' . admin_url('admin.php?page=mb-instagram-pack&tab=' . $this->id . '&section=' . sanitize_title($id)) . '" class="' . ($current_section == $id ? 'current' : '') . '">' . $label . '</a> ' . (end($array_keys) == $id ? '' : '|') . ' </li>';
             }
 
             echo '</ul><br class="clear" />';
@@ -132,7 +132,7 @@ if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
         {
             $settings = $this->get_settings();
 
-            Instagram_Pack_Admin_Settings::output_fields($settings);
+            MB_Instagram_Pack_Admin_Settings::output_fields($settings);
         }
 
         /**
@@ -142,10 +142,10 @@ if (!class_exists('Instagram_Pack_Admin_Settings_Base', false)) :
         {
             global $current_section;
             $settings = $this->get_settings();
-            Instagram_Pack_Admin_Settings::save_fields($settings);
+            MB_Instagram_Pack_Admin_Settings::save_fields($settings);
 
             if ($current_section) {
-                do_action('instagram_pack_update_options_' . $this->id . '_' . $current_section);
+                do_action('mb_instagram_pack_update_options_' . $this->id . '_' . $current_section);
             }
 
         }

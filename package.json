@@ -1,11 +1,11 @@
 {
-  "name": "instagram-pack",
+  "name": "mb-instagram-pack",
   "title": "Instagram Pack",
   "version": "1.0.0",
-  "homepage": "https://mantrabrain.com/downloads/instagram-pack-wordpress-woocommerce-theme/",
+  "homepage": "https://mantrabrain.com/downloads/mb-instagram-pack-wordpress-woocommerce-theme/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mantrabrain/instagram-pack.git"
+    "url": "https://github.com/mantrabrain/mb-instagram-pack.git"
   },
   "license": "GPL-3.0+",
   "main": "Gruntfile.js",

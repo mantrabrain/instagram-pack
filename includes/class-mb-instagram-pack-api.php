@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 
-final class Instagram_Pack_API
+final class MB_Instagram_Pack_API
 {
 
     private $api_url = 'https://api.instagram.com/v1/';
@@ -9,21 +9,21 @@ final class Instagram_Pack_API
     /**
      * The single instance of the class.
      *
-     * @var Instagram_Pack_API
+     * @var MB_Instagram_Pack_API
      * @since 1.0.0
      */
     protected static $_instance = null;
 
 
     /**
-     * Main Instagram_Pack_API Instance.
+     * Main MB_Instagram_Pack_API Instance.
      *
-     * Ensures only one instance of Instagram_Pack_API is loaded or can be loaded.
+     * Ensures only one instance of MB_Instagram_Pack_API is loaded or can be loaded.
      *
      * @since 1.0.0
      * @static
      * @see mb_aec_addons()
-     * @return Instagram_Pack_API - Main instance.
+     * @return MB_Instagram_Pack_API - Main instance.
      */
     public static function instance()
     {
@@ -40,7 +40,7 @@ final class Instagram_Pack_API
      */
     public function __clone()
     {
-        _doing_it_wrong(__FUNCTION__, __('Cloning is forbidden.', 'instagram-pack'), '1.0.0');
+        _doing_it_wrong(__FUNCTION__, __('Cloning is forbidden.', 'mb-instagram-pack'), '1.0.0');
     }
 
     /**
@@ -50,7 +50,7 @@ final class Instagram_Pack_API
      */
     public function __wakeup()
     {
-        _doing_it_wrong(__FUNCTION__, __('Unserializing instances of this class is forbidden.', 'instagram-pack'), '1.0.0');
+        _doing_it_wrong(__FUNCTION__, __('Unserializing instances of this class is forbidden.', 'mb-instagram-pack'), '1.0.0');
     }
 
     /**
@@ -80,7 +80,7 @@ final class Instagram_Pack_API
 
     public function get_access_token()
     {
-        return instagram_pack_get_option('access_token', '');
+        return mb_instagram_pack_get_option('access_token', '');
     }
 
     public function get_user_from_token($access_token = '')

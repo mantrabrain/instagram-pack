@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "instagram-pack.css",
+	"file": "mb-instagram-pack.css",
 	"sources": [
-		"../scss/instagram-pack.scss",
+		"../scss/mb-instagram-pack.scss",
 		"../scss/components/profile.scss",
 		"../scss/components/main.scss"
 	],

@@ -1,30 +1,30 @@
 <?php
 /**
- * Instagram_Pack install setup
+ * MB_Instagram_Pack install setup
  *
- * @package Instagram_Pack
+ * @package MB_Instagram_Pack
  * @since   1.0.0
  */
 
 defined('ABSPATH') || exit;
 
 /**
- * Main Instagram_Pack_Install Class.
+ * Main MB_Instagram_Pack_Install Class.
  *
- * @class Instagram_Pack
+ * @class MB_Instagram_Pack
  */
-final class Instagram_Pack_Install
+final class MB_Instagram_Pack_Install
 {
 
     public static function install()
     {
-        $instagram_pack_version = get_option('instagram_pack_plugin_version');
+        $mb_instagram_pack_version = get_option('mb_instagram_pack_plugin_version');
 
-        if (empty($instagram_pack_version)) {
+        if (empty($mb_instagram_pack_version)) {
             self::install_content_and_options();
             self::add_cap();
         } else {
-            update_option('instagram_pack_plugin_version', INSTAGRAM_PACK_VERSION);
+            update_option('mb_instagram_pack_plugin_version', MB_INSTAGRAM_PACK_VERSION);
         }
 
     }
@@ -34,7 +34,7 @@ final class Instagram_Pack_Install
         $pages = array(
 
             array(
-                'post_content' => '[instagram_pack_feed]',
+                'post_content' => '[mb_instagram_pack_feed]',
                 'post_title' => 'Instagram Pack Feed Page',
                 'post_status' => 'publish',
                 'post_type' => 'page',
@@ -45,11 +45,11 @@ final class Instagram_Pack_Install
 
             $page_id = wp_insert_post($page);
 
-            /* if ($page['post_title'] == 'Instagram_Pack Checkout') {
-                 update_option('instagram_pack_checkout_page', $page_id);
+            /* if ($page['post_title'] == 'MB_Instagram_Pack Checkout') {
+                 update_option('mb_instagram_pack_checkout_page', $page_id);
              }
-             if ($page['post_title'] == 'Instagram_Pack Thank You') {
-                 update_option('instagram_pack_thankyou_page', $page_id);
+             if ($page['post_title'] == 'MB_Instagram_Pack Thank You') {
+                 update_option('mb_instagram_pack_thankyou_page', $page_id);
              }*/
 
         }
@@ -67,7 +67,7 @@ final class Instagram_Pack_Install
     {
         global $wp_roles;
 
-        $wp_roles->add_cap('administrator', 'manage_instagram_pack_options');
+        $wp_roles->add_cap('administrator', 'manage_mb_instagram_pack_options');
     }
 
     public static function init()
@@ -78,4 +78,4 @@ final class Instagram_Pack_Install
 
 }
 
-Instagram_Pack_Install::init();
+MB_Instagram_Pack_Install::init();

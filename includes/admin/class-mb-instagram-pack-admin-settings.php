@@ -1,8 +1,8 @@
 <?php
 /**
- * Instagram_Pack Admin Settings Class
+ * MB_Instagram_Pack Admin Settings Class
  *
- * @package  Instagram_Pack/Admin
+ * @package  MB_Instagram_Pack/Admin
  * @version  1.0.0
  */
 
@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
+if ( ! class_exists( 'MB_Instagram_Pack_Admin_Settings', false ) ) :
 
 	/**
-	 * Instagram_Pack_Admin_Settings Class.
+	 * MB_Instagram_Pack_Admin_Settings Class.
 	 */
-	class Instagram_Pack_Admin_Settings {
+	class MB_Instagram_Pack_Admin_Settings {
 
 		/**
 		 * Setting pages.
@@ -46,11 +46,11 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 			if ( empty( self::$settings ) ) {
 				$settings = array();
 
-				$settings[] = include 'settings/class-instagram-pack-settings-general.php';
- 				$settings[] = include 'settings/class-instagram-pack-settings-miscellaneous.php';
+				$settings[] = include 'settings/class-mb-instagram-pack-settings-general.php';
+ 				$settings[] = include 'settings/class-mb-instagram-pack-settings-miscellaneous.php';
 
 
-				self::$settings = apply_filters( 'instagram_pack_get_settings_pages', $settings );
+				self::$settings = apply_filters( 'mb_instagram_pack_get_settings_pages', $settings );
 			}
 
 			return self::$settings;
@@ -62,20 +62,20 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 		public static function save() {
 			global $current_tab;
 
-			check_admin_referer( 'instagram-pack' );
+			check_admin_referer( 'mb-instagram-pack' );
 
 			// Trigger actions.
-			do_action( 'instagram_pack_settings_save_' . $current_tab );
-			do_action( 'instagram_pack_update_options_' . $current_tab );
-			do_action( 'instagram_pack_update_options' );
+			do_action( 'mb_instagram_pack_settings_save_' . $current_tab );
+			do_action( 'mb_instagram_pack_update_options_' . $current_tab );
+			do_action( 'mb_instagram_pack_update_options' );
 
-			self::add_message( __( 'Your settings have been saved.', 'instagram-pack' ) );
+			self::add_message( __( 'Your settings have been saved.', 'mb-instagram-pack' ) );
 			self::check_download_folder_protection();
 
 			// Clear any unwanted data and flush rules.
-			update_option( 'instagram_pack_queue_flush_rewrite_rules', 'yes' );
+			update_option( 'mb_instagram_pack_queue_flush_rewrite_rules', 'yes' );
 
-			do_action( 'instagram_pack_settings_saved' );
+			do_action( 'mb_instagram_pack_settings_saved' );
 		}
 
 		/**
@@ -114,7 +114,7 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 		/**
 		 * Settings page.
 		 *
-		 * Handles the display of the main instagram-pack settings page in admin.
+		 * Handles the display of the main mb-instagram-pack settings page in admin.
 		 */
 		public static function output() {
 			global $current_section, $current_tab;
@@ -123,20 +123,20 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$suffix = '';
 
-			do_action( 'instagram_pack_settings_start' );
+			do_action( 'mb_instagram_pack_settings_start' );
 
-			//wp_enqueue_script( 'instagram_pack_settings', Instagram_Pack()->plugin_url() . '/assets/js/admin/settings' . $suffix . '.js', array( 'jquery', 'wp-util', 'jquery-ui-datepicker', 'jquery-ui-sortable', 'iris', 'selectWoo' ), Instagram_Pack()->version, true );
+			//wp_enqueue_script( 'mb_instagram_pack_settings', MB_Instagram_Pack()->plugin_url() . '/assets/js/admin/settings' . $suffix . '.js', array( 'jquery', 'wp-util', 'jquery-ui-datepicker', 'jquery-ui-sortable', 'iris', 'selectWoo' ), MB_Instagram_Pack()->version, true );
 
 //			/*wp_localize_script(
-//				'instagram_pack_settings', 'instagram_pack_settings_params', array(
-//					'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'instagram-pack' ),
-//					'i18n_moved_up'    => __( 'Item moved up', 'instagram-pack' ),
-//					'i18n_moved_down'  => __( 'Item moved down', 'instagram-pack' ),
+//				'mb_instagram_pack_settings', 'mb_instagram_pack_settings_params', array(
+//					'i18n_nav_warning' => __( 'The changes you made will be lost if you navigate away from this page.', 'mb-instagram-pack' ),
+//					'i18n_moved_up'    => __( 'Item moved up', 'mb-instagram-pack' ),
+//					'i18n_moved_down'  => __( 'Item moved down', 'mb-instagram-pack' ),
 //				)
 //			);*/
 
 			// Get tabs for the settings page.
-			$tabs = apply_filters( 'instagram_pack_settings_tabs_array', array() );
+			$tabs = apply_filters( 'mb_instagram_pack_settings_tabs_array', array() );
 
 			include dirname( __FILE__ ) . '/views/html-admin-settings.php';
 		}
@@ -157,9 +157,9 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 				$option_name = current( array_keys( $option_array ) );
 
 				// Get value.
-				$option_value_array = $instagram_pack_options = get_option('instagram_pack_options', array());
+				$option_value_array = $mb_instagram_pack_options = get_option('mb_instagram_pack_options', array());
 
-				$option_values = instagram_pack_get_option( $option_name, '' );
+				$option_values = mb_instagram_pack_get_option( $option_name, '' );
 
 				$key = key( $option_array[ $option_name ] );
 
@@ -170,7 +170,7 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 				}
 			} else {
 				// Single value.
-				$option_value = instagram_pack_get_option( $option_name, null );
+				$option_value = mb_instagram_pack_get_option( $option_name, null );
 			}
 
 			if ( is_array( $option_value ) ) {
@@ -185,7 +185,7 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 		/**
 		 * Output admin fields.
 		 *
-		 * Loops though the instagram-pack options array and outputs each field.
+		 * Loops though the mb-instagram-pack options array and outputs each field.
 		 *
 		 * @param array[] $options Opens array to output.
 		 */
@@ -251,18 +251,18 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 						}
 						echo '<table class="form-table">' . "\n\n";
 						if ( ! empty( $value['id'] ) ) {
-							do_action( 'instagram_pack_settings_' . sanitize_title( $value['id'] ) );
+							do_action( 'mb_instagram_pack_settings_' . sanitize_title( $value['id'] ) );
 						}
 						break;
 
 					// Section Ends.
 					case 'sectionend':
 						if ( ! empty( $value['id'] ) ) {
-							do_action( 'instagram_pack_settings_' . sanitize_title( $value['id'] ) . '_end' );
+							do_action( 'mb_instagram_pack_settings_' . sanitize_title( $value['id'] ) . '_end' );
 						}
 						echo '</table>';
 						if ( ! empty( $value['id'] ) ) {
-							do_action( 'instagram_pack_settings_' . sanitize_title( $value['id'] ) . '_after' );
+							do_action( 'mb_instagram_pack_settings_' . sanitize_title( $value['id'] ) . '_after' );
 						}
 						break;
 
@@ -538,7 +538,7 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 								<label><?php echo esc_html( $value['title'] ); ?> <?php echo $tooltip_html; // WPCS: XSS ok. ?></label>
 							</th>
 							<td class="forminp">
-								<?php echo str_replace( ' id=', " data-placeholder='" . esc_attr__( 'Select a page&hellip;', 'instagram-pack' ) . "' style='" . $value['css'] . "' class='" . $value['class'] . "' id=", wp_dropdown_pages( $args ) ); // WPCS: XSS ok. ?> <?php echo $description; // WPCS: XSS ok. ?>
+								<?php echo str_replace( ' id=', " data-placeholder='" . esc_attr__( 'Select a page&hellip;', 'mb-instagram-pack' ) . "' style='" . $value['css'] . "' class='" . $value['class'] . "' id=", wp_dropdown_pages( $args ) ); // WPCS: XSS ok. ?> <?php echo $description; // WPCS: XSS ok. ?>
 							</td>
 						</tr>
 						<?php
@@ -548,7 +548,7 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 
 					// Default: run an action.
 					default:
-						do_action( 'instagram_pack_admin_field_' . $value['type'], $value );
+						do_action( 'mb_instagram_pack_admin_field_' . $value['type'], $value );
 						break;
 				}
 			}
@@ -598,7 +598,7 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 		/**
 		 * Save admin fields.
 		 *
-		 * Loops though the instagram-pack options array and outputs each field.
+		 * Loops though the mb-instagram-pack options array and outputs each field.
 		 *
 		 * @param array $options Options array to output.
 		 * @param array $data    Optional. Data to use for saving. Defaults to $_POST.
@@ -662,14 +662,14 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 				 *
 				 * @since 2.4.0
 				 */
-				$value = apply_filters( 'instagram_pack_admin_settings_sanitize_option', $value, $option, $raw_value );
+				$value = apply_filters( 'mb_instagram_pack_admin_settings_sanitize_option', $value, $option, $raw_value );
 
 				/**
 				 * Sanitize the value of an option by option name.
 				 *
 				 * @since 2.4.0
 				 */
-				$value = apply_filters( "instagram_pack_admin_settings_sanitize_option_$option_name", $value, $option, $raw_value );
+				$value = apply_filters( "mb_instagram_pack_admin_settings_sanitize_option_$option_name", $value, $option, $raw_value );
 
 				if ( is_null( $value ) ) {
 					continue;
@@ -695,12 +695,12 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 				 *
 				 * @deprecated 2.4.0 - doesn't allow manipulation of values!
 				 */
-				do_action( 'instagram_pack_update_option', $option );
+				do_action( 'mb_instagram_pack_update_option', $option );
 			}
 
 			// Save all options in our array.
 
-			instagram_pack_update_option($update_options);
+			mb_instagram_pack_update_option($update_options);
 
 			return true;
 		}
@@ -712,8 +712,8 @@ if ( ! class_exists( 'Instagram_Pack_Admin_Settings', false ) ) :
 		 */
 		public static function check_download_folder_protection() {
 			$upload_dir      = wp_upload_dir();
-			$downloads_url   = $upload_dir['basedir'] . '/instagram_pack_uploads';
-			$download_method = get_option( 'instagram_pack_file_download_method' );
+			$downloads_url   = $upload_dir['basedir'] . '/mb_instagram_pack_uploads';
+			$download_method = get_option( 'mb_instagram_pack_file_download_method' );
 
 			if ( 'redirect' === $download_method ) {
 

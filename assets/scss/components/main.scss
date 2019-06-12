@@ -1,4 +1,4 @@
-.instagram-pack-feed li {
+.mb-instagram-pack-feed li {
   list-style: none;
   float: left;
   display: inline-block;
@@ -10,14 +10,14 @@
   position: relative;
 }
 
-.instagram-pack-feed:after {
+.mb-instagram-pack-feed:after {
   clear: both;
   content: '';
   display: inline-block;
   width: 100%;
 }
 
-.instagram-pack-feed li a {
+.mb-instagram-pack-feed li a {
   padding: 5px;
   display: inline-block;
   margin: 0;
