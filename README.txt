@@ -1,4 +1,4 @@
-=== Instagram Pack ===
+=== Instagram Pack - Show your Instagram feed, gallery and photoes ===
 Contributors: mantrabrain
 Tags: Instagram, Instagram feed, Instagram photos, Instagram gallery
 Requires at least: 3.0
@@ -14,7 +14,7 @@ Display your instagram feed using this [instagram_pack_feed] shortcode.
 Display your instagram feed using this [instagram_pack_feed] shortcode.
 
 You can display as many different Instagram feeds as you like, on either the same page or on different pages, by just using the shortcode options below. For example:
-`[instagram-feed]`
+`[instagram_pack_feed]`
 
 Get [free support](https://mantrabrain.com/support-forum/)
 
