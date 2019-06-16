@@ -34,8 +34,20 @@ class MB_Instagram_Pack_Shortcode_Feed
      */
     public static function output($atts)
     {
+        $shortcode_defaults = array(
 
-        self::show_feed();
+            'grid' => mb_instagram_pack_get_option('instagram_pack_feed_grid', 3),
+            'post_per_page' => mb_instagram_pack_get_option('per_page_posts', 10),
+            'hide_like_count' => mb_instagram_pack_get_option('hide_post_like_count', 'no'),
+            'hide_comment_count' => mb_instagram_pack_get_option('hide_comment_count', 'no'),
+            'load_more_text' => mb_instagram_pack_get_option('load_more_text', __('Load more..', 'mb-instagram-pack')),
+            'loading_text' => mb_instagram_pack_get_option('load_more_loading_text', __('Loading...', 'mb-instagram-pack')),
+            'follow_text' => mb_instagram_pack_get_option('follow_text', __('Follow', 'mb-instagram-pack')),
+        );
+
+        $shortcode_attributes = wp_parse_args($atts, $shortcode_defaults);
+
+        self::show_feed($shortcode_attributes);
 
     }
 
@@ -43,7 +55,7 @@ class MB_Instagram_Pack_Shortcode_Feed
     /**
      * Show the checkout.
      */
-    private static function show_feed()
+    private static function show_feed($shortcode_attributes)
     {
 
         do_action('mb_instagram_pack_before_feed_template');
@@ -62,7 +74,8 @@ class MB_Instagram_Pack_Shortcode_Feed
 
             mb_instagram_pack_get_template('tmpl-feed.php', array(
                     'feed_data' => $feed_data,
-                    'user_data' => $user_data
+                    'user_data' => $user_data,
+                    'attributes' => $shortcode_attributes
                 )
             );
 

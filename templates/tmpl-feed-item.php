@@ -1,5 +1,5 @@
 <?php
-$grid_number = mb_instagram_pack_get_option('instagram_pack_feed_grid', 3);
+$grid_number = $attributes['grid'];
 ?>
 <div class="ip-gallery-item <?php echo 'grid-' . absint($grid_number) ?>"
      data-post-id="<?php echo esc_attr($data['id']) ?>">
@@ -9,13 +9,15 @@ $grid_number = mb_instagram_pack_get_option('instagram_pack_feed_grid', 3);
 
     <div class="ip-gallery-item-type" style="visibility: hidden;">
 
-        <span class="visually-hidden">Gallery</span><i class="fa fa-clone" aria-hidden="true"></i>
+        <span class="visually-hidden"> <?php esc_html_e('Gallery', 'mb-instagram-pack'); ?></span><i class="fa fa-clone"
+                                                                                                     aria-hidden="true"></i>
 
     </div>
     <?php
 
-    $hide_post_like = mb_instagram_pack_get_option('hide_post_like_count', 'no');
-    $hide_comment_count = mb_instagram_pack_get_option('hide_comment_count', 'no');
+    $hide_post_like = $attributes['hide_like_count'];
+
+    $hide_comment_count = $attributes['hide_comment_count'];
 
     ?>
     <div class="ip-gallery-item-info">

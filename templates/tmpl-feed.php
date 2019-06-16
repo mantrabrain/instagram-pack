@@ -24,7 +24,7 @@ defined('ABSPATH') || exit;
 
                         <h1 class="profile-user-name"><?php echo esc_html($user_data['username']); ?></h1>
 
-                        <button class="btn profile-edit-btn">Edit Profile</button>
+                        <button class="btn profile-edit-btn"><?php esc_html_e('Edit Profile', 'mb-instagram-pack'); ?></button>
 
                         <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fa fa-cog"
                                                                                                   aria-hidden="true"></i>
@@ -39,15 +39,15 @@ defined('ABSPATH') || exit;
                     <ul>
                         <li class="total-posts-count" data-post-count="<?php echo absint($counts['media']) ?>">
                             <span class="profile-stat-count"><?php echo isset($counts['media']) ? absint($counts['media']) : 0; ?></span>
-                            posts
+                            <?php esc_html_e('posts', 'mb-instagram-pack'); ?>
                         </li>
                         <li>
                             <span class="profile-stat-count"><?php echo isset($counts['followed_by']) ? absint($counts['followed_by']) : 0; ?></span>
-                            followers
+                            <?php esc_html_e('followers', 'mb-instagram-pack'); ?>
                         </li>
                         <li>
                             <span class="profile-stat-count"><?php echo isset($counts['follows']) ? absint($counts['follows']) : 0; ?></span>
-                            following
+                            <?php esc_html_e('following', 'mb-instagram-pack'); ?>
                         </li>
                     </ul>
 
@@ -75,7 +75,7 @@ defined('ABSPATH') || exit;
     <main>
 
         <div class="ip-container">
-            <?php $grid_number = mb_instagram_pack_get_option('instagram_pack_feed_grid', 3); ?>
+            <?php $grid_number = $attributes['grid']; ?>
 
             <div class="ip-gallery <?php echo 'gallery-grid-' . absint($grid_number) ?>">
 
@@ -94,9 +94,11 @@ defined('ABSPATH') || exit;
             <!-- End of gallery -->
 
             <?php
-            $load_more_text = mb_instagram_pack_get_option('load_more_text', __('Load more..', 'mb-instagram-pack'));
-            $loading_text = mb_instagram_pack_get_option('load_more_loading_text', __('Loading..', 'mb-instagram-pack'));
-            $follow_text = mb_instagram_pack_get_option('follow_text', __('Follow', 'mb-instagram-pack'));
+            $load_more_text = $attributes['load_more_text'];
+
+            $loading_text = $attributes['loading_text'];
+
+            $follow_text = $attributes['follow_text'];
             ?>
             <div class="footer-btn">
                 <a class="load-more" data-loading-text="<?php echo esc_attr($loading_text); ?>"
