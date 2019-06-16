@@ -13,13 +13,13 @@ if (!defined('ABSPATH')) {
 $tab_exists = isset($tabs[$current_tab]) || has_action('mb_instagram_pack_sections_' . $current_tab) || has_action('mb_instagram_pack_settings_' . $current_tab) || has_action('mb_instagram_pack_settings_tabs_' . $current_tab);
 $current_tab_label = isset($tabs[$current_tab]) ? $tabs[$current_tab] : '';
 
-/*echo '<pre>';
-print_r($tab_exists);
-exit;*/
+
 if (!$tab_exists) {
-    wp_safe_redirect(admin_url('admin.php?page=mb-instagram-pack'));
+
+    wp_safe_redirect(admin_url('admin.php?page=mb-instagram-pack&tab=general&section=general'));
     exit;
 }
+
 ?>
 <div class="wrap mb-instagram-pack">
     <form method="<?php echo esc_attr(apply_filters('mb_instagram_pack_settings_form_method_tab_' . $current_tab, 'post')); ?>"
@@ -32,6 +32,7 @@ if (!$tab_exists) {
             }
 
             do_action('mb_instagram_pack_settings_tabs');
+
 
             ?>
         </nav>
@@ -46,9 +47,11 @@ if (!$tab_exists) {
         ?>
         <p class="submit">
             <?php if (empty($GLOBALS['hide_save_button'])) : ?>
-                <button name="save" class="button-primary mb-instagram-pack-save-button" type="submit"
-                        value="<?php esc_attr_e('Save changes', 'mb-instagram-pack'); ?>"><?php esc_html_e('Save changes', 'mb-instagram-pack'); ?></button>
+                <button type="submit" class="button-primary mb-instagram-pack-save-button" name="save"
+                        value="<?php echo esc_attr('Save changes', 'mb-instagram-pack'); ?>"><?php echo esc_attr('Save changes', 'mb-instagram-pack'); ?></button>
+
             <?php endif; ?>
+
             <?php wp_nonce_field('mb-instagram-pack'); ?>
         </p>
     </form>

@@ -39,38 +39,11 @@ class MB_Instagram_Pack_Settings_General extends MB_Instagram_Pack_Admin_Setting
     public function get_sections()
     {
         $sections = array(
-            '' => __('General', 'mb-instagram-pack'),
+            'general' => __('General', 'mb-instagram-pack'),
             'pages' => __('Pages', 'mb-instagram-pack'),
         );
 
         return apply_filters('mb_instagram_pack_get_sections_' . $this->id, $sections);
-    }
-
-    /**
-     * Output the settings.
-     */
-    public function output()
-    {
-        global $current_section;
-
-        $settings = $this->get_settings($current_section);
-
-        MB_Instagram_Pack_Admin_Settings::output_fields($settings);
-    }
-
-    /**
-     * Save settings.
-     */
-    public function save()
-    {
-        global $current_section;
-
-        $settings = $this->get_settings($current_section);
-        MB_Instagram_Pack_Admin_Settings::save_fields($settings);
-
-        if ($current_section) {
-            do_action('mb_instagram_pack_update_options_' . $this->id . '_' . $current_section);
-        }
     }
 
     /**

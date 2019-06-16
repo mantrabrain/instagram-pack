@@ -8,6 +8,7 @@
 
 defined('ABSPATH') || exit;
 
+
 /**
  * Main MB_Instagram_Pack_Admin Class.
  *
@@ -48,6 +49,7 @@ final class MB_Instagram_Pack_Admin
      */
     public function __construct()
     {
+
         $this->includes();
         $this->init_hooks();
     }
@@ -64,45 +66,45 @@ final class MB_Instagram_Pack_Admin
 
         add_action('mb_instagram_pack_update_options_general', array($this, 'save_instagram_options'));
 
-        add_filter('plugin_action_links_' . MB_INSTAGRAM_PACK_FILE, array($this, 'settings_link'), 10, 2);
+        add_filter('plugin_action_links_' . plugin_basename(MB_INSTAGRAM_PACK_FILE), array($this, 'settings_link'), 10, 2);
 
 
     }
 
     function settings_link($links, $file)
     {
-        $settings_link = '<a href="' . admin_url('admin.php?page=mb-instagram-pack') . '">' . __('Settings', 'mb-instagram-pack') . '</a>';
+        $settings_link = '<a href="' . admin_url('admin.php?page=mb-instagram-pack&tab=general&section=general') . '">' . __('Settings', 'mb-instagram-pack') . '</a>';
 
         array_unshift($links, $settings_link);
 
         return $links;
     }
 
-    function admin_menu()
-    {
 
+    public function admin_menu()
+    {
         $cap = current_user_can('manage_mb_instagram_pack_options') ? 'manage_mb_instagram_pack_options' : 'manage_options';
 
-        add_menu_page(
-            __('Instagram Pack Setting Page', 'mb-instagram-pack'),
-            __('Instagram', 'mb-instagram-pack'),
+        add_menu_page( __( 'Instagram Pack',
+            'woocommerce' ),
+            __( 'Instagram Pack', 'woocommerce' ),
             $cap,
-            'mb-instagram-pack',
-            array($this, 'settings_page_init')
-        );
+            'admin.php?page=mb-instagram-pack', null, null, '55.5' );
+
         $settings_page = add_submenu_page(
             'settings.php',
             __('Settings', 'mb-instagram-pack'),
             __('Settings', 'mb-instagram-pack'),
             $cap,
             'mb-instagram-pack',
-            array($this, 'settings')
+            array($this, 'setting_page')
         );
 
         add_action('load-' . $settings_page, array($this, 'settings_page_init'));
+
     }
 
-    public function settings()
+    public function setting_page()
     {
 
         MB_Instagram_Pack_Admin_Settings::output();
@@ -122,8 +124,10 @@ final class MB_Instagram_Pack_Admin
         $current_tab = empty($_GET['tab']) ? 'general' : sanitize_title(wp_unslash($_GET['tab'])); // WPCS: input var okay, CSRF ok.
         $current_section = empty($_REQUEST['section']) ? '' : sanitize_title(wp_unslash($_REQUEST['section'])); // WPCS: input var okay, CSRF ok.
 
+
         // Save settings if data has been posted.
         if ('' !== $current_section && apply_filters("mb_instagram_pack_save_settings_{$current_tab}_{$current_section}", !empty($_POST['save']))) { // WPCS: input var okay, CSRF ok.
+
             MB_Instagram_Pack_Admin_Settings::save();
         } elseif ('' === $current_section && apply_filters("mb_instagram_pack_save_settings_{$current_tab}", !empty($_POST['save']))) { // WPCS: input var okay, CSRF ok.
             MB_Instagram_Pack_Admin_Settings::save();
@@ -151,7 +155,7 @@ final class MB_Instagram_Pack_Admin
 
         $is_valid_token = isset($mb_instagram_pack_options['is_valid_token']) ? (boolean)$mb_instagram_pack_options['is_valid_token'] : false;
 
-        $return_uri = admin_url('admin.php?page=mb-instagram-pack');
+        $return_uri = admin_url('admin.php?page=mb-instagram-pack&tab=general&section=general');
 
         $is_token_change = @$mb_instagram_pack_options['access_token'] != @$mb_instagram_pack_global_options['access_token'] ? true : false;
 
@@ -162,6 +166,7 @@ final class MB_Instagram_Pack_Admin
         $website_token = sha1('website_token' . $return_uri . $access_token);*/
 
         //if (!empty($access_token) && $website_token === $website_token_from_api) {
+
 
         if (!$is_valid_token || $is_token_change) {
 
@@ -174,6 +179,7 @@ final class MB_Instagram_Pack_Admin
                 $result_body = MB_Instagram_Pack_API::instance()->get_user_from_token($access_token);
 
                 $user_data = isset($result_body['data']['id']) ? $result_body['data'] : array();
+
 
                 if (count($user_data) > 0) {
 
@@ -198,7 +204,7 @@ final class MB_Instagram_Pack_Admin
 
             wp_safe_redirect($return_uri);
         }
-     }
+    }
 
     /**
      * Include required core files used in admin.

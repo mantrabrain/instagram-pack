@@ -33,33 +33,6 @@ class MB_Instagram_Pack_Settings_Miscellaneous extends MB_Instagram_Pack_Admin_S
 
 
     /**
-     * Output the settings.
-     */
-    public function output()
-    {
-        global $current_section;
-
-        $settings = $this->get_settings($current_section);
-
-        MB_Instagram_Pack_Admin_Settings::output_fields($settings);
-    }
-
-    /**
-     * Save settings.
-     */
-    public function save()
-    {
-        global $current_section;
-
-        $settings = $this->get_settings($current_section);
-        MB_Instagram_Pack_Admin_Settings::save_fields($settings);
-
-        if ($current_section) {
-            do_action('mb_instagram_pack_update_options_' . $this->id . '_' . $current_section);
-        }
-    }
-
-    /**
      * Get settings array.
      *
      * @param string $current_section Current section name.

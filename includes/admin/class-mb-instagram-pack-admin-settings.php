@@ -61,8 +61,8 @@ if ( ! class_exists( 'MB_Instagram_Pack_Admin_Settings', false ) ) :
 		 */
 		public static function save() {
 			global $current_tab;
-
 			check_admin_referer( 'mb-instagram-pack' );
+
 
 			// Trigger actions.
 			do_action( 'mb_instagram_pack_settings_save_' . $current_tab );
