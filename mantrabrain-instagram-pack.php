@@ -3,7 +3,7 @@
  * Plugin Name:       Mantrabrain Instagram Pack
  * Plugin URI:        https://wordpress.org/plugins/mantrabrain-instagram-pack/
  * Description:       Display your instagram feed using this [instagram_pack_feed] shortcode.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Mantrabrain
  * Author URI:        https://mantrabrain.com/
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if (!defined('MB_INSTAGRAM_PACK_FILE')) {
 
 // Define MB_INSTAGRAM_PACK_VERSION.
 if (!defined('MB_INSTAGRAM_PACK_VERSION')) {
-    define('MB_INSTAGRAM_PACK_VERSION', '1.0.0');
+    define('MB_INSTAGRAM_PACK_VERSION', '1.0.1');
 }
 
 // Define MB_INSTAGRAM_PACK_PLUGIN_URI.
