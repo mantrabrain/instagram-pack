@@ -68,7 +68,7 @@ class MB_Instagram_Pack_Shortcode_Feed
         if ($is_valid_token) {
 
             $id = $user_data['id'];
-
+            
             $per_page_posts = $shortcode_attributes['post_per_page'];
 
             $feed_data = MB_Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts);
