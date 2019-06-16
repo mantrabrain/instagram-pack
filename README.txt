@@ -27,8 +27,8 @@ Instagram pack plugin shortcode attributes:
 <li><strong>follow_text</strong> : <i><strong>Follow</strong></i> This option allows you to change the text of follow button. Default: Follow</li>
 </ul>
 Example:
-<strong>[instagram_pack_feed]</strong>
-<strong>[instagram_pack_feed post_per_page="11" hide_like_count="yes" hide_comment_count="yes" load_more_text="Load more text" loading_text="Loading posts.." hide_follow="no" follow_text="Follow us" ]</strong>
+<pre>[instagram_pack_feed]</pre>
+<pre>[instagram_pack_feed post_per_page="11" hide_like_count="yes" hide_comment_count="yes" load_more_text="Load more text" loading_text="Loading posts.." hide_follow="no" follow_text="Follow us" ]</pre>
 
 Get [free support](https://mantrabrain.com/support-forum/)
 

@@ -69,7 +69,7 @@ class MB_Instagram_Pack_Shortcode_Feed
 
             $id = $user_data['id'];
 
-            $per_page_posts = mb_instagram_pack_get_option('per_page_posts', 10);
+            $per_page_posts = $shortcode_attributes['post_per_page'];
 
             $feed_data = MB_Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts);
 
