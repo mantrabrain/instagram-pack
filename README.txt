@@ -30,6 +30,8 @@ Example:
 <pre>[instagram_pack_feed]</pre>
 <pre>[instagram_pack_feed post_per_page="11" hide_like_count="yes" hide_comment_count="yes" load_more_text="Load more text" loading_text="Loading posts.." hide_follow="no" follow_text="Follow us" ]</pre>
 
+<strong>Note:</strong> If you copy this shortcode from here make sure it should be paste as plain text. ( Right click and paste as plain text.)
+
 Get [free support](https://mantrabrain.com/support-forum/)
 
 If you want to add awesome feature on this plugin. You are most welcome. Click  [here](https://github.com/mantrabrain/mantrabrain-instagram-pack/) to contribute.
