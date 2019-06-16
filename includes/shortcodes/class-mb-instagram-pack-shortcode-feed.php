@@ -42,6 +42,7 @@ class MB_Instagram_Pack_Shortcode_Feed
             'hide_comment_count' => mb_instagram_pack_get_option('hide_comment_count', 'no'),
             'load_more_text' => mb_instagram_pack_get_option('load_more_text', __('Load more..', 'mb-instagram-pack')),
             'loading_text' => mb_instagram_pack_get_option('load_more_loading_text', __('Loading...', 'mb-instagram-pack')),
+            'hide_follow' => 'no',
             'follow_text' => mb_instagram_pack_get_option('follow_text', __('Follow', 'mb-instagram-pack')),
         );
 

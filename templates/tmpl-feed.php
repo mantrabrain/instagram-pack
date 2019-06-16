@@ -104,9 +104,12 @@ defined('ABSPATH') || exit;
                 <a class="load-more" data-loading-text="<?php echo esc_attr($loading_text); ?>"
                    data-text="<?php echo esc_attr($load_more_text); ?>"
                    data-last-id="<?php echo esc_attr($last_id); ?>"><?php echo esc_html($load_more_text); ?></a>
-                <a class="follow" href="https://www.instagram.com/<?php echo esc_attr($user_data['username']) ?>"
-                   target="_blank"><i
+
+                <?php if ($attributes['hide_follow'] == 'no') { ?><a class="follow"
+                                                                     href="https://www.instagram.com/<?php echo esc_attr($user_data['username']) ?>"
+                                                                     target="_blank"><i
                             class="fa fa-instagram"></i> <?php echo esc_attr($follow_text); ?></a>
+                <?php } ?>
             </div>
 
         </div>
