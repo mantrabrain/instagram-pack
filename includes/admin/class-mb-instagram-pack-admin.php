@@ -124,6 +124,10 @@ final class MB_Instagram_Pack_Admin
         $current_tab = empty($_GET['tab']) ? 'general' : sanitize_title(wp_unslash($_GET['tab'])); // WPCS: input var okay, CSRF ok.
         $current_section = empty($_REQUEST['section']) ? '' : sanitize_title(wp_unslash($_REQUEST['section'])); // WPCS: input var okay, CSRF ok.
 
+        if ($current_tab == 'general' && $current_section == '') {
+            $current_section = 'general';
+        }
+
 
         // Save settings if data has been posted.
         if ('' !== $current_section && apply_filters("mb_instagram_pack_save_settings_{$current_tab}_{$current_section}", !empty($_POST['save']))) { // WPCS: input var okay, CSRF ok.
@@ -176,6 +180,7 @@ final class MB_Instagram_Pack_Admin
 
 
         if (!$is_valid_token || $is_token_change) {
+
 
             $access_token = isset($mb_instagram_pack_options['access_token']) ? $mb_instagram_pack_options['access_token'] : '';//'1574536848.1677ed0.3d87306f533542f090612e177032140a';
 

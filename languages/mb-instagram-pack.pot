@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mantrabrain Instagram Pack 1.0.1\n"
 "Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
-"POT-Creation-Date: 2019-06-16 12:46:45+00:00\n"
+"POT-Creation-Date: 2019-06-20 11:25:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,11 +15,15 @@ msgstr ""
 
 #: includes/admin/class-mb-instagram-pack-admin-settings.php:72
 #: svn-repository/tags/1.0.0/includes/admin/class-mb-instagram-pack-admin-settings.php:72
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin-settings.php:72
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin-settings.php:72
 msgid "Your settings have been saved."
 msgstr ""
 
 #: includes/admin/class-mb-instagram-pack-admin-settings.php:541
 #: svn-repository/tags/1.0.0/includes/admin/class-mb-instagram-pack-admin-settings.php:541
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin-settings.php:541
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin-settings.php:541
 msgid "Select a page&hellip;"
 msgstr ""
 
@@ -29,11 +33,21 @@ msgstr ""
 #: svn-repository/tags/1.0.0/includes/admin/class-mb-instagram-pack-admin.php:74
 #: svn-repository/tags/1.0.0/includes/admin/class-mb-instagram-pack-admin.php:95
 #: svn-repository/tags/1.0.0/includes/admin/class-mb-instagram-pack-admin.php:96
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin.php:76
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin.php:96
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin.php:97
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin.php:76
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin.php:96
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin.php:97
 msgid "Settings"
 msgstr ""
 
 #: includes/admin/class-mb-instagram-pack-admin.php:88
 #: includes/admin/class-mb-instagram-pack-admin.php:90
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin.php:88
+#: svn-repository/tags/1.0.1/includes/admin/class-mb-instagram-pack-admin.php:90
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin.php:88
+#: svn-repository/trunk/includes/admin/class-mb-instagram-pack-admin.php:90
 msgid "Instagram Pack"
 msgstr ""
 
@@ -41,138 +55,274 @@ msgstr ""
 #: includes/admin/settings/class-mb-instagram-pack-settings-general.php:42
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:29
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:42
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:29
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:42
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:29
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:42
 msgid "General"
 msgstr ""
 
 #: includes/admin/settings/class-mb-instagram-pack-settings-general.php:43
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:43
-msgid "Pages"
+msgid "Labels"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:108
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:61
+msgid "Label Settings"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:66
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:186
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:159
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:159
+msgid "Load More Text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:67
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:187
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:160
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:160
+msgid "Load more text button label"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:70
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:42
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:190
+#: svn-repository/tags/1.0.0/templates/tmpl-feed.php:97
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:163
+#: svn-repository/tags/1.0.1/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:43
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:163
+#: svn-repository/trunk/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:43
+msgid "Load more.."
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:72
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:192
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:165
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:165
+msgid "Load More Loading Text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:73
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:193
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:166
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:166
+msgid "Load more loading text button label"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:76
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:43
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:196
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:169
+#: svn-repository/tags/1.0.1/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:44
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:169
+#: svn-repository/trunk/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:44
+msgid "Loading..."
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:78
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:198
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:171
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:171
+msgid "Follow text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:79
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:199
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:172
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:172
+msgid "Follow text button label"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:82
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:45
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:202
+#: svn-repository/tags/1.0.0/templates/tmpl-feed.php:99
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:175
+#: svn-repository/tags/1.0.1/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:46
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:175
+#: svn-repository/trunk/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:46
+msgid "Follow"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:84
+msgid "Post Text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:85
+msgid "Post label for number of posts."
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:88
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:46
+#: svn-repository/tags/1.0.1/templates/tmpl-feed.php:42
+#: svn-repository/trunk/templates/tmpl-feed.php:42
+msgid "posts"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:90
+msgid "Followers Text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:91
+msgid "Followers label for number of followers."
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:94
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:47
+#: svn-repository/tags/1.0.1/templates/tmpl-feed.php:46
+#: svn-repository/trunk/templates/tmpl-feed.php:46
+msgid "followers"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:96
+msgid "Following Text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:97
+msgid "Following label for number of following."
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:100
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:48
+#: svn-repository/tags/1.0.1/templates/tmpl-feed.php:50
+#: svn-repository/trunk/templates/tmpl-feed.php:50
+msgid "following"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:102
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:103
+msgid "Edit Profile Text"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:106
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:49
+#: svn-repository/tags/1.0.1/templates/tmpl-feed.php:27
+#: svn-repository/trunk/templates/tmpl-feed.php:27
+msgid "Edit Profile"
+msgstr ""
+
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:127
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:135
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:108
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:108
 msgid "General Settings"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:115
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:134
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:142
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:115
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:115
 msgid ""
 "Click here to get instagram token from here and paste it to Access Token "
 "Box and save it and add this [instagram_pack_feed] shortcode into your "
 "page,posts or widgets."
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:117
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:136
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:144
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:117
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:117
 msgid "Click here to get instagram access token"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:123
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:142
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:150
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:123
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:123
 msgid "Access Token"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:124
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:143
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:151
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:124
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:124
 msgid "Instagram Access Token."
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:129
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:148
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:156
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:129
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:129
 msgid "Instagram Gallery Grid"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:130
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:149
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:157
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:130
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:130
 msgid "Select grid for instagram feed"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:142
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:143
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:161
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:162
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:169
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:170
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:142
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:143
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:142
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:143
 msgid "Per Page Posts"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:149
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:168
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:176
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:149
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:149
 msgid "Hide post like counter"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:150
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:169
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:177
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:150
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:150
 msgid "Click here to hide post like counter for individual post"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:154
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:174
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:181
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:154
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:154
 msgid "Hide post comment counter"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:155
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:175
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:182
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:155
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:155
 msgid "Click here to hide post comment counter for individual post"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:159
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:186
-msgid "Load More Text"
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:180
+msgid "Hide follow button"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:160
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:187
-msgid "Load more text button label"
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:181
+msgid "Click here to hide follow button"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:163
-#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:43
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:190
-#: svn-repository/tags/1.0.0/templates/tmpl-feed.php:97
-msgid "Load more.."
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:187
+msgid "Hide Profile"
 msgstr ""
 
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:165
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:192
-msgid "Load More Loading Text"
-msgstr ""
-
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:166
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:193
-msgid "Load more loading text button label"
-msgstr ""
-
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:169
-#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:44
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:196
-msgid "Loading..."
-msgstr ""
-
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:171
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:198
-msgid "Follow text"
-msgstr ""
-
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:172
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:199
-msgid "Follow text button label"
-msgstr ""
-
-#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:175
-#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:46
-#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:202
-#: svn-repository/tags/1.0.0/templates/tmpl-feed.php:99
-msgid "Follow"
+#: includes/admin/settings/class-mb-instagram-pack-settings-general.php:188
+msgid "Click here to hide profile"
 msgstr ""
 
 #: includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:29
 #: includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:48
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:29
 #: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:75
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:29
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:48
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:29
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-miscellaneous.php:48
 msgid "Miscellaneous"
 msgstr ""
 
 #: includes/class-mb-instagram-pack-ajax.php:43
 #: svn-repository/tags/1.0.0/includes/class-mb-instagram-pack-ajax.php:43
+#: svn-repository/tags/1.0.1/includes/class-mb-instagram-pack-ajax.php:43
+#: svn-repository/trunk/includes/class-mb-instagram-pack-ajax.php:43
 msgid "Something wrong, please try again."
 msgstr ""
 
@@ -180,6 +330,10 @@ msgstr ""
 #: includes/class-mb-instagram-pack.php:60
 #: svn-repository/tags/1.0.0/includes/class-mb-instagram-pack-api.php:43
 #: svn-repository/tags/1.0.0/includes/class-mb-instagram-pack.php:60
+#: svn-repository/tags/1.0.1/includes/class-mb-instagram-pack-api.php:43
+#: svn-repository/tags/1.0.1/includes/class-mb-instagram-pack.php:60
+#: svn-repository/trunk/includes/class-mb-instagram-pack-api.php:43
+#: svn-repository/trunk/includes/class-mb-instagram-pack.php:60
 msgid "Cloning is forbidden."
 msgstr ""
 
@@ -187,24 +341,34 @@ msgstr ""
 #: includes/class-mb-instagram-pack.php:70
 #: svn-repository/tags/1.0.0/includes/class-mb-instagram-pack-api.php:53
 #: svn-repository/tags/1.0.0/includes/class-mb-instagram-pack.php:70
+#: svn-repository/tags/1.0.1/includes/class-mb-instagram-pack-api.php:53
+#: svn-repository/tags/1.0.1/includes/class-mb-instagram-pack.php:70
+#: svn-repository/trunk/includes/class-mb-instagram-pack-api.php:53
+#: svn-repository/trunk/includes/class-mb-instagram-pack.php:70
 msgid "Unserializing instances of this class is forbidden."
 msgstr ""
 
 #: includes/functions.php:62
 #: svn-repository/tags/1.0.0/includes/functions.php:62
+#: svn-repository/tags/1.0.1/includes/functions.php:62
+#: svn-repository/trunk/includes/functions.php:62
 #. translators: %s template
 msgid "%s does not exist."
 msgstr ""
 
 #: includes/functions.php:79
 #: svn-repository/tags/1.0.0/includes/functions.php:79
+#: svn-repository/tags/1.0.1/includes/functions.php:79
+#: svn-repository/trunk/includes/functions.php:79
 msgid ""
 "action_args should not be overwritten when calling "
 "mb_instagram_pack_get_template."
 msgstr ""
 
-#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:84
+#: includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:88
 #: svn-repository/tags/1.0.0/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:70
+#: svn-repository/tags/1.0.1/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:84
+#: svn-repository/trunk/includes/shortcodes/class-mb-instagram-pack-shortcode-feed.php:84
 msgid " Instagram access token invalid, please contact your website administrator"
 msgstr ""
 
@@ -216,6 +380,12 @@ msgstr ""
 msgid "Instagram"
 msgstr ""
 
+#: svn-repository/tags/1.0.0/includes/admin/settings/class-mb-instagram-pack-settings-general.php:43
+#: svn-repository/tags/1.0.1/includes/admin/settings/class-mb-instagram-pack-settings-general.php:43
+#: svn-repository/trunk/includes/admin/settings/class-mb-instagram-pack-settings-general.php:43
+msgid "Pages"
+msgstr ""
+
 #: svn-repository/tags/1.0.0/includes/admin/views/html-admin-settings.php:50
 msgid "Save changes"
 msgstr ""
@@ -224,24 +394,10 @@ msgstr ""
 msgid "Loading.."
 msgstr ""
 
+#: svn-repository/tags/1.0.1/templates/tmpl-feed-item.php:12
+#: svn-repository/trunk/templates/tmpl-feed-item.php:12
 #: templates/tmpl-feed-item.php:12
 msgid "Gallery"
-msgstr ""
-
-#: templates/tmpl-feed.php:27
-msgid "Edit Profile"
-msgstr ""
-
-#: templates/tmpl-feed.php:42
-msgid "posts"
-msgstr ""
-
-#: templates/tmpl-feed.php:46
-msgid "followers"
-msgstr ""
-
-#: templates/tmpl-feed.php:50
-msgid "following"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
