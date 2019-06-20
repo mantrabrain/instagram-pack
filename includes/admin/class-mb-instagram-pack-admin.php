@@ -85,11 +85,11 @@ final class MB_Instagram_Pack_Admin
     {
         $cap = current_user_can('manage_mb_instagram_pack_options') ? 'manage_mb_instagram_pack_options' : 'manage_options';
 
-        add_menu_page( __( 'Instagram Pack',
-            'woocommerce' ),
-            __( 'Instagram Pack', 'woocommerce' ),
+        add_menu_page(__('Instagram Pack',
+            'woocommerce'),
+            __('Instagram Pack', 'woocommerce'),
             $cap,
-            'admin.php?page=mb-instagram-pack', null, null, '55.5' );
+            'admin.php?page=mb-instagram-pack', null, null, '55.5');
 
         $settings_page = add_submenu_page(
             'settings.php',
@@ -149,6 +149,13 @@ final class MB_Instagram_Pack_Admin
 
     public function save_instagram_options()
     {
+        global $current_section;
+
+        if ($current_section != 'general') {
+
+            return;
+        }
+
         global $mb_instagram_pack_global_options;
 
         $mb_instagram_pack_options = mb_instagram_pack_get_option('mb_instagram_pack_options', array(), true);

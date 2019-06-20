@@ -23,7 +23,7 @@ if (!defined('MB_INSTAGRAM_PACK_FILE')) {
 
 // Define MB_INSTAGRAM_PACK_VERSION.
 if (!defined('MB_INSTAGRAM_PACK_VERSION')) {
-    define('MB_INSTAGRAM_PACK_VERSION', '1.0.1');
+    define('MB_INSTAGRAM_PACK_VERSION', '1.0.2');
 }
 
 // Define MB_INSTAGRAM_PACK_PLUGIN_URI.

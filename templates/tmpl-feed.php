@@ -6,71 +6,75 @@ defined('ABSPATH') || exit;
 ?>
 
 <div class="mb-instagram-pack-profile-feed">
-    <header>
-        <div class="ip-container">
+    <?php
+    if ($attributes['hide_profile'] == 'no') {
+        ?>
+        <header>
+            <div class="ip-container">
 
-            <div class="profile">
+                <div class="profile">
 
-                <div class="profile-image">
+                    <div class="profile-image">
 
-                    <a href="https://www.instagram.com/<?php echo esc_attr($user_data['username']) ?>"
-                       target="_blank"><img src="<?php echo esc_html($user_data['profile_picture']) ?>"
-                                            alt=""></a>
-
-                </div>
-
-                <a href="https://www.instagram.com/accounts/edit/" target="_blank">
-                    <div class="profile-user-settings">
-
-                        <h1 class="profile-user-name"><?php echo esc_html($user_data['username']); ?></h1>
-
-                        <button class="btn profile-edit-btn"><?php esc_html_e('Edit Profile', 'mb-instagram-pack'); ?></button>
-
-                        <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fa fa-cog"
-                                                                                                  aria-hidden="true"></i>
-                        </button>
+                        <a href="https://www.instagram.com/<?php echo esc_attr($user_data['username']) ?>"
+                           target="_blank"><img src="<?php echo esc_html($user_data['profile_picture']) ?>"
+                                                alt=""></a>
 
                     </div>
-                </a>
 
-                <?php $counts = isset($user_data['counts']) ? $user_data['counts'] : array() ?>
-                <div class="profile-stats">
+                    <a href="https://www.instagram.com/accounts/edit/" target="_blank">
+                        <div class="profile-user-settings">
 
-                    <ul>
-                        <li class="total-posts-count" data-post-count="<?php echo absint($counts['media']) ?>">
-                            <span class="profile-stat-count"><?php echo isset($counts['media']) ? absint($counts['media']) : 0; ?></span>
-                            <?php esc_html_e('posts', 'mb-instagram-pack'); ?>
-                        </li>
-                        <li>
-                            <span class="profile-stat-count"><?php echo isset($counts['followed_by']) ? absint($counts['followed_by']) : 0; ?></span>
-                            <?php esc_html_e('followers', 'mb-instagram-pack'); ?>
-                        </li>
-                        <li>
-                            <span class="profile-stat-count"><?php echo isset($counts['follows']) ? absint($counts['follows']) : 0; ?></span>
-                            <?php esc_html_e('following', 'mb-instagram-pack'); ?>
-                        </li>
-                    </ul>
+                            <h1 class="profile-user-name"><?php echo esc_html($user_data['username']); ?></h1>
+
+                            <button class="btn profile-edit-btn"><?php echo esc_html($attributes['edit_profile_text']); ?></button>
+
+                            <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fa fa-cog"
+                                                                                                      aria-hidden="true"></i>
+                            </button>
+
+                        </div>
+                    </a>
+
+                    <?php $counts = isset($user_data['counts']) ? $user_data['counts'] : array() ?>
+                    <div class="profile-stats">
+
+                        <ul>
+                            <li class="total-posts-count" data-post-count="<?php echo absint($counts['media']) ?>">
+                                <span class="profile-stat-count"><?php echo isset($counts['media']) ? absint($counts['media']) : 0; ?></span>
+                                <?php echo esc_html($attributes['post_text']); ?>
+                            </li>
+                            <li>
+                                <span class="profile-stat-count"><?php echo isset($counts['followed_by']) ? absint($counts['followed_by']) : 0; ?></span>
+                                <?php echo esc_html($attributes['followers_text']); ?>
+                            </li>
+                            <li>
+                                <span class="profile-stat-count"><?php echo isset($counts['follows']) ? absint($counts['follows']) : 0; ?></span>
+                                <?php echo esc_html($attributes['following_text']);; ?>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="profile-bio">
+
+                        <p>
+                            <span class="profile-real-name"><?php echo esc_html($user_data['full_name']); ?></span> <?php echo isset($user_data['bio']) ? esc_html($user_data['bio']) : ''; ?>
+                        </p>
+                        <?php if (isset($user_data['website'])) { ?>
+                            <p><a href="<?php echo esc_attr($user_data['website']) ?>"
+                                  target="_blank"><?php echo esc_html($user_data['website']) ?></a></p>
+                        <?php } ?>
+                    </div>
 
                 </div>
-
-                <div class="profile-bio">
-
-                    <p>
-                        <span class="profile-real-name"><?php echo esc_html($user_data['full_name']); ?></span> <?php echo isset($user_data['bio']) ? esc_html($user_data['bio']) : ''; ?>
-                    </p>
-                    <?php if (isset($user_data['website'])) { ?>
-                        <p><a href="<?php echo esc_attr($user_data['website']) ?>"
-                              target="_blank"><?php echo esc_html($user_data['website']) ?></a></p>
-                    <?php } ?>
-                </div>
+                <!-- End of profile section -->
 
             </div>
-            <!-- End of profile section -->
+            <!-- End of ip-container -->
 
-        </div>
-        <!-- End of ip-container -->
-
-    </header>
+        </header>
+    <?php } ?>
 
     <main>
 

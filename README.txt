@@ -2,8 +2,8 @@
 Contributors: mantrabrain
 Tags: Instagram, Instagram feed, Instagram photos, Instagram gallery
 Requires at least: 3.0
-Tested up to: 5.2.1
-Stable tag: 1.0.1
+Tested up to: 5.2.2
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,10 +25,15 @@ Instagram pack plugin shortcode attributes:
 <li><strong>loading_text</strong> : <i><strong>Loading...</strong></i> This option allows you to change loading text label. Default: Loading...</li>
 <li><strong>hide_follow</strong> : <i><strong>no</strong></i> This option allows you to show/hide follow button. Default: no. Options: yes/no</li>
 <li><strong>follow_text</strong> : <i><strong>Follow</strong></i> This option allows you to change the text of follow button. Default: Follow</li>
+<li><strong>post_text</strong> : <i><strong>posts</strong></i> This option allows you to change number of post text (label). Default: posts</li>
+<li><strong>followers_text</strong> : <i><strong>followers</strong></i> This option allows you to change number of followers text (label). Default: followers</li>
+<li><strong>following_text</strong> : <i><strong>following</strong></i> This option allows you to change number of following text (label). Default: following</li>
+<li><strong>edit_profile_text</strong> : <i><strong>Edit Profile</strong></i> This option allows you to change edit profile ttext (label). Default: Edit Profile</li>
+<li><strong>hide_profile</strong> : <i><strong>no</strong></i> This option allows you to show/hide profile on feed. Default: no. Options: yes/no</li>
 </ul>
 Example:
 <pre>[instagram_pack_feed]</pre>
-<pre>[instagram_pack_feed post_per_page="11" hide_like_count="yes" hide_comment_count="yes" load_more_text="Load more text" loading_text="Loading posts.." hide_follow="no" follow_text="Follow us" ]</pre>
+<pre>[instagram_pack_feed grid="4" post_per_page="11" hide_like_count="yes" hide_comment_count="yes" load_more_text="Load more text" loading_text="Loading posts.." hide_follow="no" follow_text="Follow us" ]</pre>
 
 <strong>Note:</strong> If you copy this shortcode from here make sure it should be paste as plain text. ( Right click and paste as plain text.)
 

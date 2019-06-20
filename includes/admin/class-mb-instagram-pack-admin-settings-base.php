@@ -86,8 +86,9 @@ if (!class_exists('MB_Instagram_Pack_Admin_Settings_Base', false)) :
          *
          * @return array
          */
-        public function get_settings()
+        public function get_settings($current_section)
         {
+
             return apply_filters('mb_instagram_pack_get_settings_' . $this->id, array());
         }
 
@@ -130,7 +131,9 @@ if (!class_exists('MB_Instagram_Pack_Admin_Settings_Base', false)) :
          */
         public function output()
         {
-            $settings = $this->get_settings();
+            global $current_section;
+
+            $settings = $this->get_settings($current_section);
 
             MB_Instagram_Pack_Admin_Settings::output_fields($settings);
         }
@@ -141,7 +144,9 @@ if (!class_exists('MB_Instagram_Pack_Admin_Settings_Base', false)) :
         public function save()
         {
             global $current_section;
-            $settings = $this->get_settings();
+
+            $settings = $this->get_settings($current_section);
+
             MB_Instagram_Pack_Admin_Settings::save_fields($settings);
 
             if ($current_section) {

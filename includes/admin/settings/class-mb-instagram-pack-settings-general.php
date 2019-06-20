@@ -40,7 +40,7 @@ class MB_Instagram_Pack_Settings_General extends MB_Instagram_Pack_Admin_Setting
     {
         $sections = array(
             'general' => __('General', 'mb-instagram-pack'),
-            'pages' => __('Pages', 'mb-instagram-pack'),
+            'labels' => __('Labels', 'mb-instagram-pack'),
         );
 
         return apply_filters('mb_instagram_pack_get_sections_' . $this->id, $sections);
@@ -54,41 +54,60 @@ class MB_Instagram_Pack_Settings_General extends MB_Instagram_Pack_Admin_Setting
      */
     public function get_settings($current_section = '')
     {
-        if ('pages' === $current_section) {
+        if ('labels' === $current_section) {
             $settings = apply_filters(
-                'mb_instagram_pack_settings_general_pages',
-                array(/*array(
-                        'title' => __('Page Settings', 'mb-instagram-pack'),
-                        'type' => 'title',
-                        'desc' => '',
-                        'id' => 'mb_instagram_pack_pages_options',
-                    ),
-
-                    array(
-                        'title' => __('Checkout Page', 'mb-instagram-pack'),
-                        'desc' => __('Checkout page for tour booking', 'mb-instagram-pack'),
-                        'id' => 'mb_instagram_pack_checkout_page',
-                        'type' => 'link',
-                        'href' => 'https://google.com',
-                        'default' => 'Instagram',
-                    ),
-                    array(
-                        'title' => __('Thank you page', 'mb-instagram-pack'),
-                        'desc' => __('Thank you page after tour booking', 'mb-instagram-pack'),
-                        'id' => 'mb_instagram_pack_thankyou_page',
-                        'type' => 'single_select_page',
-                    ),
-                    array(
-                        'title' => __('Terms and conditions page', 'mb-instagram-pack'),
-                        'desc' => __('Page for your terms and condition.', 'mb-instagram-pack'),
-                        'id' => 'mb_instagram_pack_termsandconditions_page',
-                        'type' => 'single_select_page',
-                    ),
-
-                    array(
-                        'type' => 'sectionend',
-                        'id' => 'mb_instagram_pack_pages_options',
-                    ),*/
+                'mb_instagram_pack_settings_general_labels',
+                array(array(
+                    'title' => __('Label Settings', 'mb-instagram-pack'),
+                    'type' => 'title',
+                    'desc' => '',
+                    'id' => 'mb_instagram_pack_label_options',
+                ), array(
+                    'title' => __('Load More Text', 'mb-instagram-pack'),
+                    'desc' => __('Load more text button label', 'mb-instagram-pack'),
+                    'id' => 'load_more_text',
+                    'type' => 'text',
+                    'default' => __('Load more..', 'mb-instagram-pack'),
+                ), array(
+                    'title' => __('Load More Loading Text', 'mb-instagram-pack'),
+                    'desc' => __('Load more loading text button label', 'mb-instagram-pack'),
+                    'id' => 'load_more_loading_text',
+                    'type' => 'text',
+                    'default' => __('Loading...', 'mb-instagram-pack'),
+                ), array(
+                    'title' => __('Follow text', 'mb-instagram-pack'),
+                    'desc' => __('Follow text button label', 'mb-instagram-pack'),
+                    'id' => 'follow_text',
+                    'type' => 'text',
+                    'default' => __('Follow', 'mb-instagram-pack'),
+                ), array(
+                    'title' => __('Post Text', 'mb-instagram-pack'),
+                    'desc' => __('Post label for number of posts.', 'mb-instagram-pack'),
+                    'id' => 'post_text',
+                    'type' => 'text',
+                    'default' => __('posts', 'mb-instagram-pack'),
+                ), array(
+                    'title' => __('Followers Text', 'mb-instagram-pack'),
+                    'desc' => __('Followers label for number of followers.', 'mb-instagram-pack'),
+                    'id' => 'followers_text',
+                    'type' => 'text',
+                    'default' => __('followers', 'mb-instagram-pack'),
+                ), array(
+                    'title' => __('Following Text', 'mb-instagram-pack'),
+                    'desc' => __('Following label for number of following.', 'mb-instagram-pack'),
+                    'id' => 'following_text',
+                    'type' => 'text',
+                    'default' => __('following', 'mb-instagram-pack'),
+                ), array(
+                    'title' => __('Edit Profile Text', 'mb-instagram-pack'),
+                    'desc' => __('Edit Profile Text', 'mb-instagram-pack'),
+                    'id' => 'edit_profile_text',
+                    'type' => 'text',
+                    'default' => __('Edit Profile', 'mb-instagram-pack'),
+                ), array(
+                    'type' => 'sectionend',
+                    'id' => 'mb_instagram_pack_label_options',
+                ),
 
                 )
             );
@@ -150,33 +169,30 @@ class MB_Instagram_Pack_Settings_General extends MB_Instagram_Pack_Admin_Setting
                         'desc' => __('Click here to hide post like counter for individual post', 'mb-instagram-pack'),
                         'id' => 'hide_post_like_count',
                         'type' => 'checkbox',
-                    ), array(
-                    'title' => __('Hide post comment counter', 'mb-instagram-pack'),
-                    'desc' => __('Click here to hide post comment counter for individual post', 'mb-instagram-pack'),
-                    'id' => 'hide_comment_count',
-                    'type' => 'checkbox',
-                ), array(
-                    'title' => __('Load More Text', 'mb-instagram-pack'),
-                    'desc' => __('Load more text button label', 'mb-instagram-pack'),
-                    'id' => 'load_more_text',
-                    'type' => 'text',
-                    'default' => __('Load more..', 'mb-instagram-pack'),
-                ), array(
-                    'title' => __('Load More Loading Text', 'mb-instagram-pack'),
-                    'desc' => __('Load more loading text button label', 'mb-instagram-pack'),
-                    'id' => 'load_more_loading_text',
-                    'type' => 'text',
-                    'default' => __('Loading...', 'mb-instagram-pack'),
-                ), array(
-                    'title' => __('Follow text', 'mb-instagram-pack'),
-                    'desc' => __('Follow text button label', 'mb-instagram-pack'),
-                    'id' => 'follow_text',
-                    'type' => 'text',
-                    'default' => __('Follow', 'mb-instagram-pack'),
-                ), array(
-                    'type' => 'sectionend',
-                    'id' => 'mb_instagram_pack_general_options',
-                ),
+                    ),
+                    array(
+                        'title' => __('Hide post comment counter', 'mb-instagram-pack'),
+                        'desc' => __('Click here to hide post comment counter for individual post', 'mb-instagram-pack'),
+                        'id' => 'hide_comment_count',
+                        'type' => 'checkbox',
+                    ),
+                    array(
+                        'title' => __('Hide follow button', 'mb-instagram-pack'),
+                        'desc' => __('Click here to hide follow button', 'mb-instagram-pack'),
+                        'id' => 'hide_follow',
+                        'type' => 'checkbox',
+                    ),
+
+                    array(
+                        'title' => __('Hide Profile', 'mb-instagram-pack'),
+                        'desc' => __('Click here to hide profile', 'mb-instagram-pack'),
+                        'id' => 'hide_profile',
+                        'type' => 'checkbox',
+                    ),
+                    array(
+                        'type' => 'sectionend',
+                        'id' => 'mb_instagram_pack_general_options',
+                    )
 
                 )
 

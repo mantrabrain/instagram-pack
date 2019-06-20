@@ -26,7 +26,6 @@ if (!function_exists('mb_instagram_pack_update_option')) {
 
     function mb_instagram_pack_update_option($update_options = array(), $is_all_option = false)
     {
-
         $option_value_array = $mb_instagram_pack_options = get_option('mb_instagram_pack_options', array());
 
         foreach ($update_options as $name => $value) {
@@ -34,6 +33,7 @@ if (!function_exists('mb_instagram_pack_update_option')) {
             $option_value_array [$name] = $value;
         }
 
+        
         update_option('mb_instagram_pack_options', $option_value_array);
 
 

@@ -605,6 +605,7 @@ if ( ! class_exists( 'MB_Instagram_Pack_Admin_Settings', false ) ) :
 		 * @return bool
 		 */
 		public static function save_fields( $options, $data = null ) {
+
 			if ( is_null( $data ) ) {
 				$data = $_POST; // WPCS: input var okay, CSRF ok.
 			}
@@ -699,6 +700,7 @@ if ( ! class_exists( 'MB_Instagram_Pack_Admin_Settings', false ) ) :
 			}
 
 			// Save all options in our array.
+
 
 			mb_instagram_pack_update_option($update_options);
 

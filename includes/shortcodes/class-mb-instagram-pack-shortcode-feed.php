@@ -35,15 +35,19 @@ class MB_Instagram_Pack_Shortcode_Feed
     public static function output($atts)
     {
         $shortcode_defaults = array(
-
             'grid' => mb_instagram_pack_get_option('instagram_pack_feed_grid', 3),
             'post_per_page' => mb_instagram_pack_get_option('per_page_posts', 10),
             'hide_like_count' => mb_instagram_pack_get_option('hide_post_like_count', 'no'),
             'hide_comment_count' => mb_instagram_pack_get_option('hide_comment_count', 'no'),
             'load_more_text' => mb_instagram_pack_get_option('load_more_text', __('Load more..', 'mb-instagram-pack')),
             'loading_text' => mb_instagram_pack_get_option('load_more_loading_text', __('Loading...', 'mb-instagram-pack')),
-            'hide_follow' => 'no',
+            'hide_follow' => mb_instagram_pack_get_option('hide_follow', 'no'),
             'follow_text' => mb_instagram_pack_get_option('follow_text', __('Follow', 'mb-instagram-pack')),
+            'post_text' => mb_instagram_pack_get_option('post_text', __('posts', 'mb-instagram-pack')),
+            'followers_text' => mb_instagram_pack_get_option('followers_text', __('followers', 'mb-instagram-pack')),
+            'following_text' => mb_instagram_pack_get_option('following_text', __('following', 'mb-instagram-pack')),
+            'edit_profile_text' => mb_instagram_pack_get_option('edit_profile_text', __('Edit Profile', 'mb-instagram-pack')),
+            'hide_profile' => mb_instagram_pack_get_option('hide_profile', 'no'),
         );
 
         $shortcode_attributes = wp_parse_args($atts, $shortcode_defaults);
@@ -68,7 +72,7 @@ class MB_Instagram_Pack_Shortcode_Feed
         if ($is_valid_token) {
 
             $id = $user_data['id'];
-            
+
             $per_page_posts = $shortcode_attributes['post_per_page'];
 
             $feed_data = MB_Instagram_Pack_API::instance()->get_user_media($id, $per_page_posts);
