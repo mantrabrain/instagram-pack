@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Mantrabrain Instagram Pack
+ * Plugin Name:       Social Gallery Pack
  * Plugin URI:        https://wordpress.org/plugins/mantrabrain-instagram-pack/
  * Description:       Display your instagram feed using this [instagram_pack_feed] shortcode.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Mantrabrain
  * Author URI:        https://mantrabrain.com/
  * License:           GPL-2.0+
@@ -23,7 +23,7 @@ if (!defined('MB_INSTAGRAM_PACK_FILE')) {
 
 // Define MB_INSTAGRAM_PACK_VERSION.
 if (!defined('MB_INSTAGRAM_PACK_VERSION')) {
-    define('MB_INSTAGRAM_PACK_VERSION', '1.0.2');
+    define('MB_INSTAGRAM_PACK_VERSION', '1.0.3');
 }
 
 // Define MB_INSTAGRAM_PACK_PLUGIN_URI.

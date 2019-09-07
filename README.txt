@@ -1,9 +1,9 @@
-=== Instagram Pack - Show your Instagram feed, gallery and photoes ===
+=== Social Gallery Pack - Show your Social feed, gallery and photoes ===
 Contributors: mantrabrain
 Tags: Instagram, Instagram feed, Instagram photos, Instagram gallery
 Requires at least: 3.0
-Tested up to: 5.2.2
-Stable tag: 1.0.2
+Tested up to: 5.2.3
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ If you want to add awesome feature on this plugin. You are most welcome. Click  
 
 
 == Changelog ==
+
+  = 1.0.3 - 2019/07/9 =
+    - Trademark issue fixed
 
   = 1.0.2 - 2019/06/20 =
     - Shortcode attributes added
